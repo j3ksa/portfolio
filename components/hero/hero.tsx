@@ -10,17 +10,17 @@ const Hero = () => {
     const changeImage = counter >= 9
     
     return (
-        <div className="flex flex-col items-center justify-center bg-green-500">
-            <p className="text-5xl">Welcome to my code cave</p>
-            <p>Feel free to explore</p>
+        <div className="flex flex-col items-center justify-center bg-green-500 space-y-16 w-[90%]">
+            <p className="text-xl lg:text-5xl">Welcome to my code cave</p>
+            <p className="text-lg lg:text-xl">Feel free to explore</p>
             <Image
-                src={changeImage ? "/assets/sauronEye.jpg" : "/assets/profile.jpeg"}
+                src={changeImage ? "/assets/sauronEye.jpg" : "/assets/cave.png"}
                 alt="myFace"
                 width={300}
                 height={300}
                 sizes="300px"
                 quality={100}
-                className="rounded-full"
+                className="rounded-full p-4 lg:p-0"
                 onClick={increaseCounter}
             />
         </div>

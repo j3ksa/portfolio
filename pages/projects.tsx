@@ -4,7 +4,7 @@ import Head from 'next/head'
 import Hero from 'components/hero/hero'
 import Footer from 'components/footer'
 
-export default function Index() {
+export default function Projects() {
   return (
     <Layout>
       <Head>
@@ -13,7 +13,6 @@ export default function Index() {
       <div className='h-screen flex flex-col items-center justify-center'>
         <Header/>
         <Hero/>
-        <Footer />
       </div>
     </Layout>
   )
