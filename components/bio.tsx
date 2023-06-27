@@ -1,7 +1,8 @@
 import Image from "next/image"
+import { TabNames } from "interfaces/tabs"
 import { useState } from "react"
 
-const Hero = () => {
+const Bio = (  ) => {
     const [counter, setCounter] = useState(0)
 
     const handleCounter = () => {
@@ -14,10 +15,13 @@ const Hero = () => {
 
     return (
         <div className="flex flex-col items-center justify-center bg-orange-300 space-y-16 w-[90%] rounded-b-[20px] rounded-t-[2px] py-4">
-            <p className="text-xl lg:text-5xl">Welcome to my code file</p>
-            <p className="text-lg lg:text-xl">Feel free to explore</p>
+            <p className="text-xl">Hi, my name is Łukasz and i have been front-end developer for a past 3 years.</p>
+            <p className="text-lg">In a free time i love to ride a bike, play or watch english football and play video games.</p>
+            <div>
+
+            </div>
             <Image
-                src={counter === 9 ? "/assets/sauronEye.jpg" : "/assets/stamp.png"}
+                src={"/assets/profile.jpeg"}
                 alt="myFace"
                 width={300}
                 height={300}
@@ -29,4 +33,4 @@ const Hero = () => {
         </div>
     )
 }
-export default Hero
+export default Bio
