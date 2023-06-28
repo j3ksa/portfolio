@@ -1,0 +1,58 @@
+export const projects = [
+    {
+        id: 0,
+        name: 'Soundoshi',
+        desc: 'Music platform with focus on integration of cryptocurrencies into the music industry, by offering new ways for artists, fans, and other stakeholders to interact and transact, allowing for direct artist-fan interactions and transparent royalty distribution,',
+        link: 'https://www.soundoshi.com/',
+        img: '/projects/soundoshi.png',
+    },
+    {
+        id: 1,
+        name: 'Banach Group',
+        desc: `Landing page for company Banach Group.`,
+        link: 'https://landingbanach.vercel.app/en',
+        img: '/projects/banachLanding.png',
+    },
+    {
+        id: 2,
+        name: 'KupBSV',
+        desc: 'A site that allows you to exchange bsv to pln and vice versa.',
+        link: 'https://kupbsv.vercel.app/wie',
+        img: '/projects/kupBsv.png',
+    },
+    {
+        id: 3,
+        name: 'PayBSV',
+        desc: `Website that allowed it's users to pay for any item via bsv.`,
+        link: 'https://paybsv.vercel.app/',
+        img: '/projects/PayBsv.png',
+    },
+    {
+        id: 4,
+        name: 'WieszCzemuMowiSieTuSzyfrem',
+        desc: `The website announcing the latest album by the artist Pono.`,
+        link: 'https://landingpono.vercel.app/',
+        img: '/projects/pondemia.png',
+    },
+    {
+        id: 5,
+        name: 'Pray for Ukraine',
+        desc: 'Auction house that allowed artists to support the housing of refugees in Poland by letting them sell their art.',
+        link: 'https://pray-for-ukraine.vercel.app/buy',
+        img: '/projects/auction.png',
+    },
+    {
+        id: 6,
+        name: 'Diamond Fleet',
+        desc: `Landing page for car renting company.`,
+        link: 'https://www.diamondfleet.pl/',
+        img: '/projects/diamond.png',
+    },
+    {
+        id: 7,
+        name: 'Varomax',
+        desc: `Landing page for car construction company.`,
+        link: 'https://www.varomax.pl/lan',
+        img: '/projects/varomax.png',
+    },
+]

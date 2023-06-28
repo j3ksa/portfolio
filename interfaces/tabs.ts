@@ -1,1 +1,1 @@
-export type TabNames = 'home' | 'bio' | 'games' | 'projects' 
+export type TabNames = 'home' | 'bio' | 'fun' | 'projects' 
