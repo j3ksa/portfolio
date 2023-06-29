@@ -1,9 +1,4 @@
-interface Props {
-    func: () => void
-    delay: number
-}
-
-export const debounce = ({func, delay}:Props) => {
+export const debounce = (func, delay: number = 1000) => {
     let timeoutId: ReturnType<typeof setTimeout>;
     return (...args: any) => {
       if (timeoutId) {
@@ -14,4 +9,3 @@ export const debounce = ({func, delay}:Props) => {
       }, delay);
     };
   };
-  

@@ -1,6 +1,7 @@
 import Layout from '../../components/layout'
 import Head from 'next/head'
 import MovieHeader from 'components/headers/movieHeader'
+import MovieMain from 'components/movie/movieMain'
 
 export default function index() {
   return (
@@ -10,6 +11,7 @@ export default function index() {
       </Head>
       <div className='flex flex-col items-center justify-center px-20 py-20'>
         <MovieHeader />
+        <MovieMain/>
       </div>
     </Layout>
   )

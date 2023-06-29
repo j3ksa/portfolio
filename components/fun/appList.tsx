@@ -5,7 +5,7 @@ import { apps } from "info/apps"
 const AppList = (  ) => {
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 to-red-400 space-y-16 w-[80%] rounded-b-[20px] rounded-t-[2px] py-4 h-[600px]">
+        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 from-[80%] to-red-400 space-y-16 w-[80%] rounded-b-[20px] rounded-t-[2px] py-4 h-[600px]">
             <p className="text-xl lg:text-3xl ">Here you can find and play all the games and applications i have prepared</p>
             <div className="space-y-3 mb-8 h-[90%]">
                 {apps.map(app => (
