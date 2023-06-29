@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const MovieHeader = () => {
     return (
-        <div className="w-full bg-white px-4 py-2">
+        <div className="w-full bg-movieBanner bg-cover px-4 py-2">
             <div className="flex items-center justify-between">
                 <div className="flex items-end space-x-2">
                     <p className="text-3xl font-lg">Movie comparison</p>

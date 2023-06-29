@@ -6,8 +6,8 @@ import { InitialMovie, MovieDetailed } from "interfaces/movie"
 import { AiOutlineClose } from "react-icons/ai"
 
 const MovieMain = () => {
-    const leftInput = useRef()
-    const rightInput = useRef()
+    const leftInput: React.MutableRefObject<HTMLInputElement> = useRef()
+    const rightInput: React.MutableRefObject<HTMLInputElement> = useRef()
 
     const [leftList, setLeftList] = useState<InitialMovie[]>([])
     const [rightList, setRightList] = useState<InitialMovie[]>([])
@@ -20,13 +20,15 @@ const MovieMain = () => {
 
     const leftSummary = async (e: React.ChangeEvent<HTMLInputElement>) => {
         try {
-            const results = await fetchMovies(e.target.value)
-            if(results.Response === "False") {
-                setLeftList([])
-                setLeftError(results.Error)
-            } else {
-                setLeftError('')
-                setLeftList(results.Search)
+            if(e.target.value.length > 0) {
+                const results = await fetchMovies(e.target.value)
+                if(results.Response === "False") {
+                    setLeftList([])
+                    setLeftError(results.Error)
+                } else {
+                    setLeftError('')
+                    setLeftList(results.Search)
+                }
             }
         }
         catch(error) {
@@ -36,13 +38,15 @@ const MovieMain = () => {
 
     const rightSummary = async(e: React.ChangeEvent<HTMLInputElement>) => {
         try {
-            const results = await fetchMovies(e.target.value)
-            if(results.Response === "False") {
-                setLeftList([])
-                setRightError(results.Error)
-            } else {
-                setRightError('')
-                setRightList(results.Search)
+            if(e.target.value.length > 0) {
+                const results = await fetchMovies(e.target.value)
+                if(results.Response === "False") {
+                    setLeftList([])
+                    setRightError(results.Error)
+                } else {
+                    setRightError('')
+                    setRightList(results.Search)
+                }
             }
         }
         catch(error) {
@@ -62,8 +66,15 @@ const MovieMain = () => {
         setRightPicked(results)
     }
 
+    const clearInput = (ref: React.MutableRefObject<HTMLInputElement>) => {
+        ref.current.value = ''
+    }
+
+    const leftListExist = leftList.length > 0 && leftInput.current.value !== ''
+    const rightListExist = rightList.length > 0 && rightInput.current.value !== ''
+
     return (
-        <div className="container bg-white py-4">
+        <div className="container bg-blue-600 py-4">
             <div className="grid grid-cols-2">
                 <div className="flex flex-col items-center relative">
                     <p className="text-xl font-bold mb-2">First movie</p>
@@ -99,16 +110,19 @@ const MovieMain = () => {
                             </div>
                             <AiOutlineClose className="absolute top-0 right-0 cursor-pointer" onClick={setLeftPicked.bind(this, null)}/>
                         </div> :
-                        <div className="absolute top-8 left-0 bg-white flex flex-col items-center">
-                            <input 
-                                id="leftInput"
-                                ref={leftInput}
-                                type="text"
-                                className="outline-none border border-blue-500 placeholder:px-2 px-2 mx-auto"
-                                placeholder="min. 3 letters"
-                                onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => leftSummary(e))}
-                            />
-                            {leftList.length > 0 && 
+                        <div className={`absolute top-8 ${rightListExist ? 'left-0' : 'left-1/3'} bg-white flex flex-col items-center`}>
+                            <div className="relative">
+                                <input 
+                                    id="leftInput"
+                                    ref={leftInput}
+                                    type="text"
+                                    className="outline-none placeholder:px-2 px-2 mx-auto rounded-md bg-transparent"
+                                    placeholder="min. 3 letters"
+                                    onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => leftSummary(e))}
+                                />
+                                <AiOutlineClose className="absolute top-[5px] right-1 cursor-pointer" onClick={() => clearInput(leftInput)}/>
+                            </div>
+                            {leftListExist &&
                                 <div className="">
                                     <div className="grid grid-cols-3 text-xl">
                                         <p className="place-self-stretch flex items-center justify-center">Poster:</p>
@@ -134,12 +148,12 @@ const MovieMain = () => {
                                     })}
                                 </div>
                             }
-                            {leftError && <p className="text-red-500">{leftError}</p>}
+                            {leftError && leftListExist && <p className="text-red-500">{leftError}</p>}
                         </div>
                     }
                 </div>
                 <div className="flex flex-col items-center relative">
-                    <p className="text-xl font-bold mb-2">Second movie</p>
+                    <p className="text-xl font-bold mb-6">Second movie</p>
                     {rightPicked ?
                         <div className="flex items-center space-x-2 relative">
                             <Image
@@ -173,16 +187,20 @@ const MovieMain = () => {
                             </div>
                             <AiOutlineClose className="absolute top-0 right-0 cursor-pointer" onClick={setRightPicked.bind(this, null)}/>
                         </div> :
-                        <div className="absolute top-8 right-0 bg-white flex flex-col items-center">
-                            <input 
-                                id="leftInput"
-                                ref={rightInput}
-                                type="text"
-                                placeholder="min. 3 letters"
-                                className="outline-none border border-blue-500 placeholder:px-2 px-2"
-                                onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => rightSummary(e))}
-                            />
-                            {rightList.length > 0 && 
+                        <div className={`absolute top-8 ${rightListExist ? 'left-0' : 'left-1/3'}  bg-white flex flex-col items-center`}>
+                            <div className="relative">
+                                <input 
+                                    id="leftInput"
+                                    ref={rightInput}
+                                    type="text"
+                                    placeholder="min. 3 letters"
+                                    className="outline-none border border-blue-500 placeholder:px-2 px-2"
+                                    onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => rightSummary(e))}
+                                />
+                                <AiOutlineClose className="absolute top-[5px] right-1 cursor-pointer" onClick={() => clearInput(rightInput)}/>
+                            </div>   
+
+                            {rightListExist &&
                                 <div className="">
                                     <div className="grid grid-cols-3 text-xl">
                                         <p className="place-self-stretch flex items-center justify-center">Poster:</p>
@@ -211,7 +229,7 @@ const MovieMain = () => {
                                     })}
                                 </div>
                             }
-                            {rightError && <p className="text-red-500">{rightError}</p>}
+                            {rightError && rightListExist && <p className="text-red-500">{rightError}</p>}
                         </div>
                     }
                 </div>

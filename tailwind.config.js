@@ -31,6 +31,7 @@ module.exports = {
       },
       backgroundImage: {
         'city': "url('/assets/city.jpg')",
+        'movieBanner': "url('/assets/movie/movieBanner.jpg')",
       },
     },
   },
