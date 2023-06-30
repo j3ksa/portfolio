@@ -12,7 +12,7 @@ const Project = ({info}: Props) => {
         href={info.link}
         key={info.id}
         target="_blank"
-        className="grid grid-cols-2 px-3 py-2"
+        className="grid lg:grid-cols-2 px-3 py-2"
     >
         <Image
             src={info.img}
@@ -21,7 +21,7 @@ const Project = ({info}: Props) => {
             height={0}
             sizes="300px"
             quality={100}
-            className="p-4 lg:p-0 hover:cursor-pointer w-[300px] aspect-video object-cover rounded-lg"
+            className="hover:cursor-pointer w-[300px] aspect-video object-cover rounded-lg place-self-stretch mx-auto mb-2 lg:mb-0"
         />
         <div>
             <p className="text-xl font-bold">{info.name}</p>

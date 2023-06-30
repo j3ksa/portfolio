@@ -7,6 +7,7 @@ import { TabNames } from 'interfaces'
 import Bio from 'components/bio/bio'
 import AppList from 'components/fun/appList'
 import ProjectList from 'components/projects/projectList'
+import Menu from 'components/headers/menu'
 
 export default function Index() {
   const [tabName, setTabName] = useState<TabNames>('home')
@@ -15,8 +16,11 @@ export default function Index() {
       <Head>
         <title>{`Home`}</title>
       </Head>
-      <div className='h-screen flex flex-col items-center justify-center'>
-        <Header tabName={tabName} setTabName={setTabName}/>
+      <div className='min-h-screen flex flex-col items-center justify-center'>
+        <Header tabName={tabName} setTabName={setTabName}/>                
+        <div className="lg:hidden w-full">
+            <Menu setTabName={setTabName}/>
+        </div>
         {tabName === 'home' && <Hero/>}
         {tabName === 'bio' && <Bio/>}
         {tabName === 'fun' && <AppList/>}

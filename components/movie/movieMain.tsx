@@ -18,6 +18,9 @@ const MovieMain = () => {
     const [leftError, setLeftError] = useState('')
     const [rightError, setRightError] = useState('')
 
+    const leftListExist = leftList.length > 0 && leftInput.current.value !== ''
+    const rightListExist = rightList.length > 0 && rightInput.current.value !== ''
+
     const leftSummary = async (e: React.ChangeEvent<HTMLInputElement>) => {
         try {
             if(e.target.value.length > 0) {
@@ -68,18 +71,29 @@ const MovieMain = () => {
 
     const clearInput = (ref: React.MutableRefObject<HTMLInputElement>) => {
         ref.current.value = ''
+
     }
 
-    const leftListExist = leftList.length > 0 && leftInput.current.value !== ''
-    const rightListExist = rightList.length > 0 && rightInput.current.value !== ''
+    const movieValues = ['Title', 'BoxOffice', 'Actors', 'Awards', 'Director', 'Genre', 'Released', 'Runtime', 'Year']
+
+    const filterValues = (values: MovieDetailed) :{} => {
+        return( 
+            Object.keys(values)
+            .filter((key) => movieValues.includes(key))
+            .reduce((obj, key) => {
+                obj[key] = values[key]
+                return obj
+            }, {})
+        )
+    }
 
     return (
-        <div className="container bg-blue-600 py-4">
-            <div className="grid grid-cols-2">
+        <div className="w-full bg-blue-600 py-4 min-h-[calc(100vh-94px)] lg:min-h-[400px]">
+            <div className="grid lg:grid-cols-2 space-y-10 lg:space-y-0">
                 <div className="flex flex-col items-center relative">
-                    <p className="text-xl font-bold mb-2">First movie</p>
+                    <p className="lg:text-xl font-bold mb-6 text-white">First movie</p>
                     {leftPicked ?
-                        <div className="flex items-center space-x-2 relative">
+                        <div className="flex flex-col lg:flex-row items-center space-x-2 relative bg-blue-300 p-2 rounded-lg">
                             <Image
                                 src={leftPicked.Poster === 'N/A' ? '/assets/notAvailable.png' : leftPicked.Poster}
                                 alt="moviePoster"
@@ -90,48 +104,41 @@ const MovieMain = () => {
                                 className="w-[150px] object-cover aspect-[2/3] place-self-stretch mx-auto"
                             />
                             <div className="flex flex-col justify-center items-start">
-                                <p>{leftPicked.Title}</p>
-                                <p>{leftPicked.BoxOffice}</p>
-                                <p>{leftPicked.Actors}</p>
-                                <p>{leftPicked.Awards}</p>
-                                <p>{leftPicked.Director}</p>
-                                <p>{leftPicked.Genre}</p>
-                                <p>{leftPicked.Released}</p>
-                                <p>{leftPicked.Runtime}</p>
-                                <p>{leftPicked.Year}</p>
+                                {Object.entries(filterValues(leftPicked)).map(([key, value]) => (
+                                    <p><span className="font-bold mr-1">{key}:</span>{value as string}</p>
+                                ))}
                                 {leftPicked.Ratings.map(rating => {
                                     return(
-                                        <div className="flex">
-                                            <p>{rating.Source} <span className="mx-1">-</span></p>
+                                        <div className="flex space-x-1">
+                                            <p className="font-bold">{rating.Source}:</p>
                                             <p> {rating.Value}</p>
                                         </div>
                                     )
                                 })}
                             </div>
-                            <AiOutlineClose className="absolute top-0 right-0 cursor-pointer" onClick={setLeftPicked.bind(this, null)}/>
+                            <AiOutlineClose className="absolute top-1 right-1 cursor-pointer" onClick={setLeftPicked.bind(this, null)}/>
                         </div> :
-                        <div className={`absolute top-8 ${rightListExist ? 'left-0' : 'left-1/3'} bg-white flex flex-col items-center`}>
-                            <div className="relative">
+                        <div className={`flex flex-col items-center relative`}>
+                            <form className="relative mb-2">
                                 <input 
-                                    id="leftInput"
                                     ref={leftInput}
                                     type="text"
-                                    className="outline-none placeholder:px-2 px-2 mx-auto rounded-md bg-transparent"
-                                    placeholder="min. 3 letters"
+                                    className="p-2 rounded-xl bg-blue-800 text-white focus:outline-none focus:border-gray-200"
+                                    placeholder="Movie name"
                                     onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => leftSummary(e))}
                                 />
-                                <AiOutlineClose className="absolute top-[5px] right-1 cursor-pointer" onClick={() => clearInput(leftInput)}/>
-                            </div>
+                                <AiOutlineClose className={`absolute top-[13px] right-1 cursor-pointer ${!leftListExist && 'hidden'}`} onClick={() => {clearInput(leftInput), setLeftList([])}}/>
+                            </form>
                             {leftListExist &&
-                                <div className="">
-                                    <div className="grid grid-cols-3 text-xl">
+                                <div className="absolute top-12 lg:max-h-[350px] overflow-y-auto bg-blue-300 rounded-lg w-[320px] z-10">
+                                    <div className="grid grid-cols-3 text-xl font-semibold mb-2">
                                         <p className="place-self-stretch flex items-center justify-center">Poster:</p>
                                         <p>Title:</p>
                                         <p className="place-self-stretch flex items-center justify-center">Year:</p>
                                     </div>
                                     {leftList?.map((movie, index) => {
                                         return (
-                                            <div key={index} className="grid grid-cols-3 mb-2" onClick={() => handleLeftClick(movie.imdbID)}>
+                                            <div key={index} className="grid grid-cols-3 mb-2 cursor-pointer hover:bg-blue-200" onClick={() => handleLeftClick(movie.imdbID)}>
                                                 <Image
                                                     src={movie.Poster === 'N/A' ? '/assets/notAvailable.png' : movie.Poster}
                                                     alt="moviePoster"
@@ -148,14 +155,14 @@ const MovieMain = () => {
                                     })}
                                 </div>
                             }
-                            {leftError && leftListExist && <p className="text-red-500">{leftError}</p>}
+                            {leftError && leftInput.current.value !== '' && <p className="text-red-500 px-2 bg-white rounded-lg">{leftError}</p>}
                         </div>
                     }
                 </div>
                 <div className="flex flex-col items-center relative">
-                    <p className="text-xl font-bold mb-6">Second movie</p>
+                    <p className="lg:text-xl font-bold mb-6 text-white">Second movie</p>
                     {rightPicked ?
-                        <div className="flex items-center space-x-2 relative">
+                        <div className="flex flex-col lg:flex-row items-center space-x-2 relative bg-blue-300 p-2 rounded-lg">
                             <Image
                                 src={rightPicked.Poster === 'N/A' ? '/assets/notAvailable.png' : rightPicked.Poster }
                                 alt="moviePoster"
@@ -166,43 +173,36 @@ const MovieMain = () => {
                                 className="w-[150px] object-cover aspect-[2/3] place-self-stretch mx-auto"
                             />
                             <div className="flex flex-col justify-center items-start">
-                                <p>{rightPicked.Title}</p>
-                                <p>{rightPicked.BoxOffice}</p>
-                                <p>{rightPicked.Actors}</p>
-                                <p>{rightPicked.Awards}</p>
-                                <p>{rightPicked.Director}</p>
-                                <p>{rightPicked.Genre}</p>
-                                <p>{rightPicked.Released}</p>
-                                <p>{rightPicked.Runtime}</p>
-                                <p>{rightPicked.Year}</p>
+                                {Object.entries(filterValues(rightPicked)).map(([key, value]) => (
+                                    <p><span className="font-bold mr-1">{key}:</span>{value as string}</p>
+                                ))}
                                 {rightPicked.Ratings.map(rating => {
                                     return(
-                                        <div className="flex">
-                                            <p>{rating.Source} <span className="mx-1">-</span></p>
-                                            
+                                        <div className="flex space-x-1">
+                                            <p className="font-bold">{rating.Source}:</p>
                                             <p> {rating.Value}</p>
                                         </div>
                                     )
                                 })}
                             </div>
-                            <AiOutlineClose className="absolute top-0 right-0 cursor-pointer" onClick={setRightPicked.bind(this, null)}/>
+                            <AiOutlineClose className="absolute top-1 right-1 cursor-pointer" onClick={setRightPicked.bind(this, null)}/>
                         </div> :
-                        <div className={`absolute top-8 ${rightListExist ? 'left-0' : 'left-1/3'}  bg-white flex flex-col items-center`}>
-                            <div className="relative">
+                        <div className="flex flex-col items-center relative">
+                            <div className="relative mb-2">
                                 <input 
                                     id="leftInput"
                                     ref={rightInput}
                                     type="text"
-                                    placeholder="min. 3 letters"
-                                    className="outline-none border border-blue-500 placeholder:px-2 px-2"
+                                    placeholder="Movie name"
+                                    className="p-2 rounded-xl bg-blue-800 text-white focus:outline-none focus:border-gray-200"
                                     onChange={debounce((e: React.ChangeEvent<HTMLInputElement>) => rightSummary(e))}
                                 />
-                                <AiOutlineClose className="absolute top-[5px] right-1 cursor-pointer" onClick={() => clearInput(rightInput)}/>
+                                <AiOutlineClose className={`absolute top-[13px] right-1 cursor-pointer ${!rightListExist && 'hidden'}`} onClick={() => {clearInput(rightInput), setRightList([])}}/>
                             </div>   
 
                             {rightListExist &&
-                                <div className="">
-                                    <div className="grid grid-cols-3 text-xl">
+                                <div className="absolute top-12 max-h-[350px] overflow-y-auto bg-blue-300 rounded-lg w-[320px]">
+                                    <div className="grid grid-cols-3 text-xl font-semibold mb-2">
                                         <p className="place-self-stretch flex items-center justify-center">Poster:</p>
                                         <p>Title:</p>
                                         <p className="place-self-stretch flex items-center justify-center">Year:</p>
@@ -211,7 +211,7 @@ const MovieMain = () => {
                                         return (
                                             <div 
                                                 key={index} 
-                                                className="grid grid-cols-3 mb-2"
+                                                className="grid grid-cols-3 mb-2 cursor-pointer hover:bg-blue-200"
                                                 onClick={() => handleRightClick(movie.imdbID)}
                                             >
                                                 <Image
@@ -229,7 +229,7 @@ const MovieMain = () => {
                                     })}
                                 </div>
                             }
-                            {rightError && rightListExist && <p className="text-red-500">{rightError}</p>}
+                            {rightError && rightInput.current.value !== '' && <p className="text-red-500 px-2 bg-white rounded-lg">{rightError}</p>}
                         </div>
                     }
                 </div>

@@ -9,7 +9,7 @@ export default function index() {
       <Head>
         <title>{`Movie comparison`}</title>
       </Head>
-      <div className='flex flex-col items-center justify-center px-20 py-20'>
+      <div className='flex flex-col items-center justify-center lg:px-20 lg:py-20'>
         <MovieHeader />
         <MovieMain/>
       </div>

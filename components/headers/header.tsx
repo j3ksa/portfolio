@@ -1,4 +1,3 @@
-import Menu from "./menu";
 import { TabNames } from "interfaces/tabs";
 import { Dispatch, SetStateAction } from "react";
 
@@ -49,9 +48,6 @@ const Header = ({tabName, setTabName}: Props) => {
                     </div>
                     <div className={`${tabName !== 'fun' ? 'hidden' : rightBorder} shadow-[-10px_0_0_0_rgb(239,68,68)]`} />
                     <div className={`${tabName !== 'fun' ? 'hidden' : leftBorder} shadow-[10px_0_0_0_rgb(239,68,68)]`} />
-                </div>
-                <div className="flex items-center justify-center lg:justify-end lg:hidden">
-                    <Menu/>
                 </div>
             </div>
         </div>

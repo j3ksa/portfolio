@@ -14,9 +14,9 @@ const Bio = (  ) => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 from-[40%] to-green-300 space-y-8 w-[80%] rounded-b-[20px] rounded-t-[2px] h-[600px] overflow-y-auto overflow-x-hidden">
-            <div className="flex items-center justify-center">
-                <div className="w-[50%]">
+        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 from-[40%] to-green-300 space-y-8 lg:w-[80%] lg:rounded-b-[20px] lg:rounded-t-[2px] lg:h-[600px] lg:overflow-y-auto overflow-x-hidden">
+            <div className="flex flex-col lg:flex-row items-center justify-center">
+                <div className="w-[90%] lg:w-[50%]">
                     <p className="text-lg text-center">Hi, my name is Łukasz and I'm a passionate and experienced front-end developer dedicated to crafting visually stunning and user-friendly websites. With a keen eye for detail and a deep understanding of modern web technologies, I strive to create seamless digital experiences that leave a lasting impression.</p>
                     <p className="text-lg text-center">In a free time i love to ride a bike, play or watch english football and play video games.</p>
                 </div>
@@ -32,14 +32,14 @@ const Bio = (  ) => {
                 />
             </div>
             <p className="text-2xl font-bold">My skills:</p>
-            <div className="grid grid-cols-5 gap-3 w-full">
+            <div className="grid grid-cols-3 lg:grid-cols-5 gap-3 w-full">
                 {skills.map(skill => (
                     <div
                         key={skill.id}
                         className="flex flex-col items-center justify-center hover:text-gray-800 hover:scale-105"
                     >
                         <skill.icon className="text-5xl text-black"/>
-                        <p>{skill.name}</p>
+                        <p className="text-center">{skill.name}</p>
                     </div>
                 ))}
             </div>

@@ -5,7 +5,7 @@ import Social from "./social"
 const Hero = () => {
 
     return (
-        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 from-[70%] to-blue-300 space-y-8 w-[80%] rounded-b-[20px] rounded-t-[2px] py-8 h-[600px]">
+        <div className="flex flex-col items-center justify-center bg-gradient-to-b from-orange-300 from-[70%] to-blue-300 space-y-8 w-full lg:w-[80%] lg:rounded-b-[20px] lg:rounded-t-[2px] py-8 h-[600px]">
             <p className="text-xl lg:text-5xl font-semibold">Welcome to my code file</p>
             <p className="text-lg lg:text-xl font-semibold">Feel free to explore</p>
             <Image
