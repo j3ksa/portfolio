@@ -15,10 +15,10 @@ export const projects = [
     },
     {
         id: 2,
-        name: 'KupBSV',
-        desc: 'A site that allows you to exchange bsv to pln and vice versa.',
-        link: 'https://kupbsv.vercel.app/wie',
-        img: '/projects/kupBsv.png',
+        name: 'Hotels',
+        desc: 'Job project for Guestline',
+        link: 'https://hotels-psi.vercel.app/',
+        img: '/projects/guestline.png',
     },
     {
         id: 3,
@@ -54,5 +54,12 @@ export const projects = [
         desc: `Landing page for car construction company.`,
         link: 'https://www.varomax.pl/lan',
         img: '/projects/varomax.png',
+    },
+    {
+        id: 8,
+        name: 'KupBSV',
+        desc: 'A site that allows you to exchange bsv to pln and vice versa.',
+        link: 'https://kupbsv.vercel.app/wie',
+        img: '/projects/kupBsv.png',
     },
 ]
