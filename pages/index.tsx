@@ -1,31 +1,16 @@
-import Header from '../components/headers/header'
 import Layout from '../components/layout'
 import Head from 'next/head'
-import Hero from 'components/hero/hero'
-import { useState } from 'react'
-import { TabNames } from 'interfaces'
-import Bio from 'components/bio/bio'
-import AppList from 'components/fun/appList'
-import ProjectList from 'components/projects/projectList'
-import Menu from 'components/headers/menu'
+import { VStack } from '@chakra-ui/react'
 
-export default function Index() {
-  const [tabName, setTabName] = useState<TabNames>('home')
+const Index = () => {
   return (
     <Layout>
       <Head>
         <title>{`Home`}</title>
       </Head>
-      <div className='min-h-screen flex flex-col items-center justify-center'>
-        <Header tabName={tabName} setTabName={setTabName}/>                
-        <div className="lg:hidden w-full">
-            <Menu setTabName={setTabName}/>
-        </div>
-        {tabName === 'home' && <Hero/>}
-        {tabName === 'bio' && <Bio/>}
-        {tabName === 'fun' && <AppList/>}
-        {tabName === 'projects' && <ProjectList/>}
-      </div>
+      <VStack width='80%' m='auto'>
+      </VStack>
     </Layout>
   )
 }
+export default Index

@@ -1,5 +1,5 @@
 import Meta from './meta'
-
+import { Box } from '@chakra-ui/react'
 type Props = {
   children: React.ReactNode
 }
@@ -8,9 +8,9 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Meta />
-      <div className="min-h-screen lg:bg-city bg-cover">
+      <Box>
         <main>{children}</main>
-      </div>
+      </Box>
     </>
   )
 }
