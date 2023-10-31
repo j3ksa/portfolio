@@ -1,7 +1,6 @@
 import { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '../styles/theme'
-import '../styles/index.css'
 import { Rubik } from 'next/font/google'
 
 const rubik = Rubik({
