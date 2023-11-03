@@ -1,3 +1,5 @@
 export * from './socials'
 export * from './categories'
 export * from './skills'
+export * from './basics'
+export * from './welcomePhrases'

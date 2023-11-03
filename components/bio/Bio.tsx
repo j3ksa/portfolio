@@ -1,23 +1,27 @@
-import { Box, Text, Code, VStack, HStack, Spacer } from "@chakra-ui/react"
+import { Box, Text, Code, VStack, HStack, Spacer, Highlight } from "@chakra-ui/react"
 import { SuperImage } from "components/utils"
 import { Link } from "@chakra-ui/react"
+import { TypeAnimation } from "react-type-animation"
+import { welcomePhrases } from "info"
 
 export const Bio = () => {
+    const n = 1
+    const phrasesWithDelay = welcomePhrases.reduce((list, el, i) => {
+        list.push(el);
+        if ((i + 1) % n === 0) list.push(1000)
+        return list
+    }, [])
+
     return (
-        <Box display='flex' alignContent='center' alignItems='center'>
-            <SuperImage
-                src='/assets/profileRemovedBG.png'
-                alt="portfolioImg"
-                width={400}
-                height={400}
-                quality={100}
-            />
-            <VStack spacing={3} color='white' align='start' marginLeft={4}>
-                <Text fontSize={32} display='flex'>
-                    Hey, I'm
-                    <Text color='green.500' marginLeft={2}>
-                        Łukasz Jęksa
-                    </Text>
+        <Box display='flex' justifyContent='space-around' alignItems='center' width='100%'>
+            <VStack spacing={3} color='white' align='start'>
+                <Text display='flex' fontSize={32} alignItems='center'>
+                    <Highlight
+                        query={['Łukasz Jęksa']}
+                        styles={{ bg: 'green.500', rounded: 'lg', p: 1, marginLeft: 2 }}
+                    >
+                        Hey, I'm Łukasz Jęksa
+                    </Highlight>
                 </Text>
                 <Text fontSize={26}>
                     a frontend developer
@@ -40,9 +44,12 @@ export const Bio = () => {
                     <Text color='blue.200'>
                         '
                     </Text>
-                    <Text>
-                        welcome
-                    </Text>
+                    <TypeAnimation
+                        sequence={phrasesWithDelay}
+                        speed={99}
+                        deletionSpeed={99}
+                        repeat={Infinity}
+                    />
                     <Text color='blue.200'>
                         '
                     </Text>
@@ -50,9 +57,9 @@ export const Bio = () => {
                         )
                     </Text>
                 </Code>
-                <Spacer/>
+                <Spacer />
                 <HStack width='100%'>
-                    <Box as='button' bg='green.500' p={2} borderRadius={8}>
+                    <Box as='button' bg='green.500' p={2} borderRadius={8} _hover={{ backgroundColor: 'white', color: 'green.500' }}>
                         Contact me
                     </Box>
                     <Spacer />
@@ -65,6 +72,13 @@ export const Bio = () => {
                     </Link>
                 </HStack>
             </VStack>
+            <SuperImage
+                src='/assets/profileRemovedBG.png'
+                alt="portfolioImg"
+                width={400}
+                height={400}
+                quality={100}
+            />
         </Box >
     )
 }
