@@ -5,6 +5,7 @@ import { Header } from 'components/header/Header'
 import { Bio } from 'components/bio/Bio'
 import { Summary } from 'components/summary/Summary'
 import { Timeline } from 'components/timeline/Timeline'
+import { TechStack } from 'components/techStack/TechStack'
 
 const Index = () => {
 
@@ -18,6 +19,7 @@ const Index = () => {
         <Bio />
         <Summary />
         <Timeline />
+        <TechStack />
       </VStack>
     </Layout>
   )

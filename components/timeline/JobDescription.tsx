@@ -3,9 +3,8 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+import { Pagination, EffectCreative } from 'swiper/modules';
 import { Link } from "@chakra-ui/next-js";
-import { StaticImageData } from "next/image";
 import { Job } from "@types";
 
 interface Props {
@@ -40,12 +39,23 @@ export const JobDescription = ({ currentJob }: Props) => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    grabCursor={true}
+                    modules={[Pagination, EffectCreative]}
+                    effect={'creative'}
+                    creativeEffect={{
+                        prev: {
+                            shadow: true,
+                            translate: [0, 0, -400],
+                        },
+                        next: {
+                            translate: [0, '100%', 0],
+                        },
+                    }}
                     style={{
-                        backgroundColor: 'white',
-                        width: '300px',
-                        height: '150px',
-                        marginTop: '10px',
+                        backgroundColor: 'black',
+                        width: '350px',
+                        height: '175px',
+                        marginTop: 'auto',
                         // @ts-ignore: Pagination styling
                         "--swiper-pagination-color": "#38A169",
                         "--swiper-pagination-bullet-inactive-color": "#fff",

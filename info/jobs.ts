@@ -18,8 +18,9 @@ export const jobs: Job[] = [
         name: 'Freelance',
         color: 'green.300',
         description: `
-            I proudly present my journey as a freelance Developer. specializing in building one-page websites using React and Next.js. \n
-            Through this collection of projects, I aim to demonstrate my expertise, creativity, and dedication to crafting visually captivating, responsive, and high-performance web solutions. \n
+            Welcome to my comprehensive portfolio, where I proudly present my extensive journey as a freelance Frontend Developer with over three years of hands-on experience in the field.  \n
+            My specialization lies in the creation of captivating one-page websites using React and Next.js. \n
+            This portfolio serves as a testament to my expertise, creativity, and unwavering commitment to crafting visually stunning, responsive, and high-performance web solutions that leave a lasting impression. \n
         `,
         monthsInWork: 4,
         projects: [

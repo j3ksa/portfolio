@@ -1,5 +1,4 @@
 import { Box, Text, Code, VStack, HStack, Spacer, Highlight } from "@chakra-ui/react"
-import { SuperImage } from "components/utils"
 import { Link } from "@chakra-ui/react"
 import { TypeAnimation } from "react-type-animation"
 import { welcomePhrases } from "info"
@@ -72,13 +71,9 @@ export const Bio = () => {
                     </Link>
                 </HStack>
             </VStack>
-            <SuperImage
-                src='/assets/profileRemovedBG.png'
-                alt="portfolioImg"
-                width={400}
-                height={400}
-                quality={100}
-            />
+            <Box width={300} height={300} border={1} borderStyle='solid' borderColor='gray.500'>
+
+            </Box>
         </Box >
     )
 }
