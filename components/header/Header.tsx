@@ -1,13 +1,18 @@
-import { Flex, Spacer, HStack } from "@chakra-ui/react"
+import { Flex, Spacer, HStack, Highlight } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/next-js"
 import { categories } from "info"
 import { smoothScroll } from "utils"
 
 export const Header = () => {
     return (
-        <Flex bg='black' width='100%' p={6}>
-            <Link href='/' fontSize={24} color='green.500' _hover={{ color: 'white' }} fontWeight='600'>
-                j3ksa.icu
+        <Flex as='nav' bg='black' width='100%' p={6}>
+            <Link href='/' fontSize={24}  fontWeight='600'>
+                <Highlight
+                    query={['j3ksa.icu']}
+                    styles={{ bg: 'green.500', rounded: 'lg', p: 1, marginLeft: 2, _hover: {color: 'white', bg: 'transparent'} }}
+                >
+                    j3ksa.icu
+                </Highlight>
             </Link>
             <Spacer />
             <HStack spacing={10}>
