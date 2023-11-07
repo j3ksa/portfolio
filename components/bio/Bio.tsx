@@ -17,7 +17,7 @@ export const Bio = () => {
                 <Text display='flex' fontSize={32} alignItems='center'>
                     <Highlight
                         query={['Łukasz Jęksa']}
-                        styles={{ bg: 'green.500', rounded: 'lg', p: 1, marginLeft: 2 }}
+                        styles={{ bg: 'green.500', rounded: 'lg', px: 3, marginLeft: 2 }}
                     >
                         Hey, I'm Łukasz Jęksa
                     </Highlight>

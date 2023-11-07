@@ -3,9 +3,10 @@ import Image from "next/image"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination, EffectCreative } from 'swiper/modules';
+import { Pagination, EffectCreative, Autoplay } from 'swiper/modules';
 import { Link } from "@chakra-ui/next-js";
 import { Job } from "@types";
+import { Divider } from "@chakra-ui/react";
 
 interface Props {
     currentJob: Job
@@ -13,6 +14,7 @@ interface Props {
 
 export const JobDescription = ({ currentJob }: Props) => {
     const currentProjects = currentJob.projects
+
     return (
         <HStack display='flex' alignItems='start' justifyContent='space-between' marginTop={20} width='67%' spacing={10}>
             <Text color='white' whiteSpace='pre-line' textAlign='justify'>
@@ -31,16 +33,22 @@ export const JobDescription = ({ currentJob }: Props) => {
                             fill={true}
                             objectFit="contain"
                             quality={100}
+                            priority
                         />
                     </Box>
                 }
+                <Divider marginTop={4} marginBottom={4}/>
                 <Swiper
                     direction={'vertical'}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    }}
                     pagination={{
                         clickable: true,
                     }}
                     grabCursor={true}
-                    modules={[Pagination, EffectCreative]}
+                    modules={[Pagination, EffectCreative, Autoplay]}
                     effect={'creative'}
                     creativeEffect={{
                         prev: {
@@ -68,7 +76,9 @@ export const JobDescription = ({ currentJob }: Props) => {
                                 src={project.image}
                                 alt="project image"
                                 fill
-                                priority
+                                placeholder="blur"
+                                blurDataURL={'public/projects/auction.png'}
+                                style={{ objectFit: 'cover', transition: '0.3s' }}
                             />
                             <Link href={project.link} target="_blank" color='white' bg='black' p={2} textAlign='center' position='absolute' bottom={0} left={0}>
                                 {project.name}

@@ -7,14 +7,14 @@ export const TechStack = () => {
             <Text display='flex' fontSize={32} alignItems='center' marginBottom={10}>
                 <Highlight
                     query={['My tech stack']}
-                    styles={{ bg: 'green.500', rounded: 'lg', p: 1, marginLeft: 2 }}
+                    styles={{ bg: 'green.500', rounded: 'lg', px: 3 }}
                 >
                     My tech stack
                 </Highlight>
             </Text>
             <Grid templateColumns='repeat(5, 1fr)' gap={10}>
                 {skills.map(skill => (
-                    <GridItem key={skill.id} color={skill.color} fontSize={40} display='flex' flexDirection='column' alignItems='center' justifyContent='center' _hover={{ transform: 'scale(1.1)'}}>
+                    <GridItem key={skill.id} color={skill.color} fontSize={40} display='flex' flexDirection='column' alignItems='center' justifyContent='center' _hover={{ transform: 'scale(1.1)' }}>
                         <skill.icon />
                         <Text color='white' fontSize={20}>
                             {skill.name}

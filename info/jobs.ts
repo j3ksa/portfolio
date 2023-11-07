@@ -67,7 +67,7 @@ export const jobs: Job[] = [
                 id: 'szyfr',
                 name: 'WieszCzemuMówiSięTuSzyfrem',
                 image: Pondemia,
-                link: 'https://landingpono.vercel.app/',
+                link: 'https://wieszczemumowisietuszyfrem.vercel.app/',
             },
             {
                 id: 'banach',
@@ -79,7 +79,7 @@ export const jobs: Job[] = [
                 id: 'kup',
                 name: 'KupBSV',
                 image: KupBSV,
-                link: 'https://kupbsv.vercel.app/wie',
+                link: 'https://kupbsv.vercel.app/',
             },
             {
                 id: 'pay',
@@ -112,7 +112,7 @@ export const jobs: Job[] = [
                 id: 'auction',
                 name: 'Auction',
                 image: Auction,
-                link: 'https://pray-for-ukraine.vercel.app/buy',
+                link: 'https://pray-for-ukraine.vercel.app/',
             },
         ]
     },

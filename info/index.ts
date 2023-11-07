@@ -1,4 +1,4 @@
-export * from './socials'
+export * from './contact'
 export * from './categories'
 export * from './skills'
 export * from './basics'

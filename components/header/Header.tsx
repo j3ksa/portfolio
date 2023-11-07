@@ -9,7 +9,7 @@ export const Header = () => {
             <Link href='/' fontSize={24}  fontWeight='600'>
                 <Highlight
                     query={['j3ksa.icu']}
-                    styles={{ bg: 'green.500', rounded: 'lg', p: 1, marginLeft: 2, _hover: {color: 'white', bg: 'transparent'} }}
+                    styles={{ bg: 'green.500', rounded: 'lg', px: 3, py: 2, _hover: {color: 'white', bg: 'transparent'} }}
                 >
                     j3ksa.icu
                 </Highlight>
