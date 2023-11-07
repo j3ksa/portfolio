@@ -14,7 +14,7 @@ export const TechStack = () => {
             </Text>
             <Grid templateColumns='repeat(5, 1fr)' gap={10}>
                 {skills.map(skill => (
-                    <GridItem color={skill.color} fontSize={40} display='flex' flexDirection='column' alignItems='center' justifyContent='center' _hover={{ transform: 'scale(1.1)'}}>
+                    <GridItem key={skill.id} color={skill.color} fontSize={40} display='flex' flexDirection='column' alignItems='center' justifyContent='center' _hover={{ transform: 'scale(1.1)'}}>
                         <skill.icon />
                         <Text color='white' fontSize={20}>
                             {skill.name}

@@ -1,67 +1,99 @@
 import { Skill } from '@types'
 import { TbBrandNextjs, TbBrandReact} from 'react-icons/tb'
-import { BiLogoJavascript, BiLogoTypescript, BiLogoTailwindCss, BiLogoGit, BiLogoRedux, BiLogoSass, BiLogoDocker, BiLogoGraphql} from 'react-icons/bi'
-import { SiJest } from 'react-icons/si'
+import { BiLogoJavascript, BiLogoTypescript, BiLogoTailwindCss, BiLogoRedux, BiLogoSass, BiLogoDocker, BiLogoGraphql, BiSolidCloud, BiLogoGit} from 'react-icons/bi'
+import { SiJest, SiStorybook } from 'react-icons/si'
+import { RiBearSmileFill } from 'react-icons/ri'
+import { GiOctopus } from 'react-icons/gi'
 
 export const skills: Skill[] = [
     {
-        id: 0,
+        id: 'next',
         name: 'Next.js',
         icon: TbBrandNextjs,
         color: 'white',
     },
     {
-        id: 1,
+        id: 'react',
         name: 'React',
         icon: TbBrandReact,
         color: '#61DBFB',
     },
     {
-        id: 2,
+        id: 'js',
         name: 'javascript',
         icon: BiLogoJavascript,
         color: '#F0DB4F',
     },
     {
-        id: 3,
+        id: 'ts',
         name: 'typescript',
         icon: BiLogoTypescript,
         color: '#007acc ',
     },
     {
-        id: 4,
+        id: 'tailwind',
         name: 'tailwindCSS',
         icon: BiLogoTailwindCss,
         color: '#06b6d4',
     },
     {
-        id: 5,
+        id: 'sass',
         name: 'Sass',
         icon: BiLogoSass,
         color: '#c69',
     },
     {
-        id: 6,
+        id: 'redux',
         name: 'Redux',
         icon: BiLogoRedux,
         color: '#00a7e5',
     },
     {
-        id: 8,
+        id: 'zustand',
+        name: 'Zustand',
+        icon: RiBearSmileFill,
+        color: '#ECB63F',
+    },
+    {
+        id: 'jest',
         name: 'Jest',
         icon: SiJest,
         color: '#C63D14',
     },
     {
-        id: 7,
+        id: 'reactTesting',
+        name: 'React Testing Library',
+        icon: GiOctopus,
+        color: '#FC4544',
+    },
+    {
+        id: 'storybook',
+        name: 'StoryBook',
+        icon: SiStorybook,
+        color: '#FF4785',
+    },
+    {
+        id: 'graph',
         name: 'GraphQl',
         icon: BiLogoGraphql,
         color: '#e535ab',
     },
     {
-        id: 9,
+        id: 'rest',
+        name: 'RestApi',
+        icon: BiSolidCloud,
+        color: '#002C51',
+    },
+    {
+        id: 'docker',
         name: 'Docker',
         icon: BiLogoDocker,
         color: '#0db7ed',
+    },
+    {
+        id: 'git',
+        name: 'Git',
+        icon: BiLogoGit,
+        color: '#F1502F',
     },
 ]

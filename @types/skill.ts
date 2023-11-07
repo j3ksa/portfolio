@@ -1,7 +1,7 @@
 import { IconType } from "react-icons"
 
 export interface Skill {
-    id: number
+    id: string
     name: string
     icon: IconType
     color: string

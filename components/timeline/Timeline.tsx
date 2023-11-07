@@ -32,6 +32,7 @@ export const Timeline = () => {
             >
                 {jobs.map(job => (
                     <Box
+                        key={job.id}
                         as="button"
                         width={`${job.monthsInWork * 100 / workingMonths}%`}
                         border={2}

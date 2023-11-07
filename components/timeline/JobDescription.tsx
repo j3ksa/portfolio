@@ -63,7 +63,7 @@ export const JobDescription = ({ currentJob }: Props) => {
                     }}
                 >
                     {currentProjects.map((project) => (
-                        <SwiperSlide style={{ position: 'relative' }}>
+                        <SwiperSlide key={project.id} style={{ position: 'relative' }}>
                             <Image
                                 src={project.image}
                                 alt="project image"
