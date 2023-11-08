@@ -1,15 +1,19 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Box, Flex, Text, HStack, Highlight } from "@chakra-ui/react"
 import { jobs } from "info/jobs"
 import { JobDescription } from "./JobDescription";
 
-export const Timeline = () => {
+interface Props {
+    timelineRef: React.MutableRefObject<HTMLDivElement>
+}
+
+export const Timeline = ({timelineRef}: Props) => {
     const [timelineId, setTimelineId] = useState('freelance')
     const workingMonths = 36
     const currentJob = jobs.find(job => job.id === timelineId)
 
     return (
-        <Flex direction='column' alignItems='center' justifyContent='center' marginTop={20} marginBottom={20} width='100%'>
+        <Flex ref={timelineRef} id="exp" direction='column' alignItems='center' justifyContent='center' marginTop={20} marginBottom={20} width='100%'>
             <Text display='flex' fontSize={32} alignItems='center'>
                 <Highlight
                     query={['My timeline']}

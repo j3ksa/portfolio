@@ -71,8 +71,8 @@ export const Bio = () => {
                     </Link>
                 </HStack>
             </VStack>
-            <Box width={300} height={300} border={1} borderStyle='solid' borderColor='gray.500'>
-
+            <Box width={300} height={300} border={1} borderStyle='solid' borderColor='gray.500' color='white' display='flex' alignItems='center' justifyContent='center'>
+                Coming soon
             </Box>
         </Box >
     )

@@ -1,9 +1,13 @@
 import { Highlight, VStack, Text, Grid, GridItem } from "@chakra-ui/react"
 import { skills } from "info/skills"
 
-export const TechStack = () => {
+interface Props {
+    techStackRef: React.MutableRefObject<HTMLDivElement>
+}
+
+export const TechStack = ({ techStackRef }: Props) => {
     return (
-        <VStack marginBottom={10} width='100%'>
+        <VStack ref={techStackRef} id="tech" marginBottom={10} width='100%'>
             <Text display='flex' fontSize={32} alignItems='center' marginBottom={10}>
                 <Highlight
                     query={['My tech stack']}

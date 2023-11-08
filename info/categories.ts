@@ -1,11 +1,11 @@
 export const categories = [
     {
-        id: 'skills',
-        name: 'Skills',
-    },
-    {
         id: 'exp',
         name: 'Experience',
+    },
+    {
+        id: 'tech',
+        name: 'Tech Stack',
     },
     {
         id: 'contact',
