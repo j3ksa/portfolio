@@ -1,7 +1,8 @@
-import { Flex, Spacer, HStack, Highlight } from "@chakra-ui/react"
+import { Flex, Spacer, HStack, Highlight, useBreakpointValue } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/next-js"
 import { categories } from "info"
-import { smoothScroll } from "utils"
+import { MobileMenu } from "components/mobileMenu/MobileMenu"
+import { scroll } from "utils"
 
 interface Props {
     timelineRef: React.MutableRefObject<HTMLDivElement>
@@ -10,13 +11,15 @@ interface Props {
 }
 
 export const Header = ({ timelineRef, techStackRef, contactRef }: Props) => {
+    const desktop = useBreakpointValue(
+        {
+            base: 'none',
+            md: 'flex'
+        },
+    )
+
     const refs = [timelineRef, techStackRef, contactRef]
-    const handleClick = (id: string) => {
-        const correctRef = refs.find(ref => ref.current.id === id)
-        setTimeout(() => {
-            correctRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100)
-    };
+
     return (
         <Flex as='nav' bg='black' width='100%' p={6}>
             <Link href='/' fontSize={24} fontWeight='600'>
@@ -28,13 +31,14 @@ export const Header = ({ timelineRef, techStackRef, contactRef }: Props) => {
                 </Highlight>
             </Link>
             <Spacer />
-            <HStack spacing={10}>
+            <HStack spacing={10} display={desktop}>
                 {categories.map(category => (
-                    <Link key={category.id} ref={refs[category.id]} href='' id={category.id} onClick={() => handleClick(category.id)} color='white' _hover={{ color: 'green.500' }}>
+                    <Link key={category.id} ref={refs[category.id]} href='' id={category.id} onClick={() => scroll(category.id, refs)} color='white' _hover={{ color: 'green.500' }}>
                         {category.name}
                     </Link>
                 ))}
             </HStack>
+            <MobileMenu refs={refs} />
         </Flex>
     )
 }
