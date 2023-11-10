@@ -1,18 +1,16 @@
-import Meta from './meta'
-
+import { useRef } from "react";
+import { VStack } from "@chakra-ui/react";
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => {
+  const ref = useRef(null);
   return (
-    <>
-      <Meta />
-      <div className="min-h-screen lg:bg-city bg-cover">
-        <main>{children}</main>
-      </div>
-    </>
-  )
-}
+    <VStack ref={ref} width="100%" m="auto" scrollBehavior="smooth">
+      {children}
+    </VStack>
+  );
+};
 
-export default Layout
+export default Layout;

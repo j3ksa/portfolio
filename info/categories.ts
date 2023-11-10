@@ -1,25 +1,16 @@
-import { BiGame, BiBookOpen, BiHome } from "react-icons/bi"
-import { BsPersonWorkspace } from "react-icons/bs"
+import { Categories } from "@types";
 
-export const categories = [
-    {
-        id: '0',
-        name: 'Home',
-        icon: BiHome,
-    },
-    {
-        id: '1',
-        name: 'Bio',
-        icon: BiBookOpen,
-    },
-    {
-        id: '2',
-        name: 'Projects',
-        icon: BsPersonWorkspace,
-    },
-    {
-        id: '3',
-        name: 'Fun',
-        icon: BiGame,
-    },
-]
+export const categories: Categories[] = [
+  {
+    id: "exp",
+    name: "Experience",
+  },
+  {
+    id: "tech",
+    name: "Tech Stack",
+  },
+  {
+    id: "contact",
+    name: "Contact",
+  },
+];
