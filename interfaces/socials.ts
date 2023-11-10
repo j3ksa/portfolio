@@ -1,8 +1,8 @@
-import { IconType } from "react-icons"
+import { IconType } from "react-icons";
 
 export interface Socials {
-    id: string
-    name: string
-    icon: IconType
-    link: string
+  id: string;
+  name: string;
+  icon: IconType;
+  link: string;
 }

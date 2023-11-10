@@ -4,7 +4,8 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "format": "prettier --write --ignore-path .prettierignore ."
   },
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.5",
@@ -28,6 +29,7 @@
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14"
+    "postcss": "^8.4.14",
+    "prettier": "3.0.3"
   }
 }

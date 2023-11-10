@@ -1,2 +1,2 @@
-export { fetchMovies } from './fetchMovies'
-export { getMoreInfo } from './getMoreInfo'
+export { fetchMovies } from "./fetchMovies";
+export { getMoreInfo } from "./getMoreInfo";
