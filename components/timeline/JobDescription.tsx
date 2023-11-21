@@ -36,6 +36,7 @@ export const JobDescription = ({ currentJob }: Props) => {
         justifyContent="start"
         position="sticky"
         top={0}
+        bg='black'
       >
         {!currentJob.image ? (
           <Text
