@@ -4,13 +4,13 @@ import {
   Code,
   VStack,
   HStack,
-  Spacer,
   Highlight,
+  Link,
 } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
 import { welcomePhrases } from "info";
 import { scroll } from "utils";
+import { GeometryGame } from "components/geometryGame";
 
 interface Props {
   contactRef?: React.MutableRefObject<HTMLDivElement>;
@@ -28,89 +28,114 @@ export const Bio = ({ contactRef }: Props) => {
     <Box
       as="section"
       display="flex"
-      flexDirection={{ base: "column", md: "row" }}
-      justifyContent="space-around"
+      flexDirection="column"
       alignItems="center"
       width="100%"
+      py={{ base: 4, md: 6 }}
+      gap={{ base: 8, md: 10 }}
     >
-      <VStack spacing={3} color="white" align="start">
+      <VStack
+        spacing={4}
+        color="white"
+        align="center"
+        textAlign="center"
+        width="100%"
+        maxW="640px"
+      >
         <Text
           display="flex"
-          fontSize={{ base: 28, md: 32 }}
+          fontSize={{ base: 28, md: 36 }}
+          fontWeight="bold"
           alignItems="center"
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={2}
         >
+          Hey, I'm
           <Highlight
             query={["Łukasz Jęksa"]}
-            styles={{ bg: "green.500", rounded: "lg", px: 3, marginLeft: 2 }}
+            styles={{
+              bg: "green.500",
+              color: "black",
+              rounded: "lg",
+              px: 3,
+              py: 0.5,
+            }}
           >
-            Hey, I'm Łukasz Jęksa
+            Łukasz Jęksa
           </Highlight>
         </Text>
-        <Text fontSize={26}>a frontend developer</Text>
-        <Text fontSize={20}>and this is page about me.</Text>
+        <Text fontSize={{ base: 22, md: 26 }} color="gray.200">
+          a frontend developer
+        </Text>
+        <Text fontSize={{ base: 18, md: 20 }} color="gray.400">
+          and this is page about me.
+        </Text>
         <Code
           variant="outline"
           display="flex"
+          alignItems="center"
+          justifyContent="center"
           textAlign="center"
           color="white"
-          p={2}
+          p={2.5}
+          rounded="md"
+          borderColor="gray.700"
+          fontSize={{ base: "xs", md: "sm" }}
+          maxW="100%"
+          overflowX="auto"
         >
           console
-          <Text color={"blue.600"}>.log</Text>
-          <Text color={"pink.800"} fontWeight={700}>
+          <Text as="span" color={"blue.400"}>
+            .log
+          </Text>
+          <Text as="span" color={"pink.500"} fontWeight={700}>
             (
           </Text>
-          <Text color="blue.200">'</Text>
+          <Text as="span" color="blue.200">'</Text>
           <TypeAnimation
             sequence={phrasesWithDelay}
             speed={99}
             deletionSpeed={99}
             repeat={Infinity}
           />
-          <Text color="blue.200">'</Text>
-          <Text color={"pink.800"} fontWeight={700}>
+          <Text as="span" color="blue.200">'</Text>
+          <Text as="span" color={"pink.500"} fontWeight={700}>
             )
           </Text>
         </Code>
-        <Spacer />
-        <HStack width="100%">
+        <HStack spacing={6} pt={2} justify="center">
           <Box
             as="button"
             bg="green.500"
             color="black"
-            p={2}
+            fontWeight="bold"
+            px={5}
+            py={2.5}
             borderRadius={8}
             cursor="pointer"
-            _hover={{ backgroundColor: "white" }}
-            transitionDuration="200ms"
+            _hover={{
+              backgroundColor: "white",
+              transform: "translateY(-1px)",
+            }}
+            transition="all 200ms ease"
             onClick={() => contactRef && scroll("contact", [contactRef])}
           >
             Contact me
           </Box>
-          <Spacer />
           <Link
             href="/cv/ENG.pdf"
             download="Łukasz Jęksa - CV"
-            color="pink.700"
+            color="pink.400"
+            fontWeight="semibold"
+            _hover={{ color: "pink.300", textDecoration: "underline" }}
           >
             Download CV
           </Link>
         </HStack>
       </VStack>
-      <Box
-        my={{ base: 4, md: 0 }}
-        width={300}
-        height={300}
-        border={1}
-        borderStyle="solid"
-        borderColor="gray.500"
-        color="white"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        Coming soon
-      </Box>
+
+      <GeometryGame />
     </Box>
   );
 };

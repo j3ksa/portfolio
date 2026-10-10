@@ -47,6 +47,7 @@ const Index = ({ basics }: IndexProps) => {
           />
         </Reveal>
         <Reveal>
+          {/* Bio with interactive Geometry Reflex game */}
           <Bio contactRef={contactRef} />
         </Reveal>
         <Reveal>
