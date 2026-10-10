@@ -10,8 +10,13 @@ import {
 import { Link } from "@chakra-ui/react";
 import { TypeAnimation } from "react-type-animation";
 import { welcomePhrases } from "info";
+import { scroll } from "utils";
 
-export const Bio = () => {
+interface Props {
+  contactRef?: React.MutableRefObject<HTMLDivElement>;
+}
+
+export const Bio = ({ contactRef }: Props) => {
   const n = 1;
   const phrasesWithDelay = welcomePhrases.reduce((list, el, i) => {
     list.push(el);
@@ -75,8 +80,10 @@ export const Bio = () => {
             color="black"
             p={2}
             borderRadius={8}
+            cursor="pointer"
             _hover={{ backgroundColor: "white" }}
             transitionDuration="200ms"
+            onClick={() => contactRef && scroll("contact", [contactRef])}
           >
             Contact me
           </Box>

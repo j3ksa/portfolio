@@ -1,19 +1,27 @@
-import { Box, HStack, Highlight, Center } from "@chakra-ui/react";
-import { basics } from "info/basics";
+import { Box, Highlight, Center, SimpleGrid, Text } from "@chakra-ui/react";
+import { basics as defaultBasics } from "info/basics";
+import { Basics } from "types";
 
-export const Summary = () => {
+interface Props {
+  basics?: Basics[];
+}
+
+export const Summary = ({ basics = defaultBasics }: Props) => {
   return (
     <Center
       as="section"
-      bg={"gray.800"}
+      bg="gray.800"
       width="100%"
       py={6}
+      px={{ base: 4, md: 8 }}
       borderRadius={8}
       marginTop="-2"
     >
-      <HStack
-        spacing={{ base: 4, md: 32 }}
-        flexDir={{ base: "column", md: "row" }}
+      <SimpleGrid
+        columns={{ base: 2, md: 3, lg: 6 }}
+        spacing={{ base: 6, md: 6, lg: 4 }}
+        width="100%"
+        justifyItems="center"
       >
         {basics.map((info) => (
           <Box
@@ -21,9 +29,9 @@ export const Summary = () => {
             display="flex"
             flexDirection="column"
             alignItems="center"
-            justifyContent="center"
+            justifyContent="flex-start"
             color="white"
-            maxW={140}
+            maxW={{ base: "140px", lg: "160px" }}
             textAlign="center"
           >
             <Highlight
@@ -31,17 +39,27 @@ export const Summary = () => {
               styles={{
                 bg: "green.500",
                 rounded: "lg",
-                paddingX: "5px",
-                fontSize: "32px",
-                marginBottom: "4px",
+                px: "8px",
+                py: "2px",
+                fontSize: { base: "24px", md: "28px", lg: "32px" },
+                fontWeight: "bold",
+                marginBottom: "6px",
+                display: "inline-block",
+                color: "black",
               }}
             >
               {info.value}
             </Highlight>
-            {info.description}
+            <Text
+              fontSize={{ base: "12px", md: "13px", lg: "14px" }}
+              color="gray.300"
+              lineHeight="1.3"
+            >
+              {info.description}
+            </Text>
           </Box>
         ))}
-      </HStack>
+      </SimpleGrid>
     </Center>
   );
 };

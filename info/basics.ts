@@ -2,23 +2,33 @@ import { Basics } from "types";
 
 export const basics: Basics[] = [
   {
-    id: "projects",
-    value: "20+",
-    description: "Projects build from scratch",
+    id: "experience",
+    value: "6+",
+    description: "Years building on GitHub",
   },
   {
-    id: "experience",
-    value: "5+",
-    description: "Years of experience",
+    id: "projects",
+    value: "19",
+    description: "Public repositories",
+  },
+  {
+    id: "languages",
+    value: "4+",
+    description: "Core languages & tech used",
+  },
+  {
+    id: "focus",
+    value: "C#",
+    description: "Game development focus",
   },
   {
     id: "games",
-    value: "3",
-    description: "Github achievements",
+    value: "4+",
+    description: "Games & interactive projects",
   },
   {
     id: "effort",
     value: "100%",
-    description: "Effort put into the projects",
+    description: "Dedication to game systems",
   },
 ];

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { GetStaticProps } from "next";
 import Layout from "../components/layout";
 import Head from "next/head";
 import { Reveal } from "components/Reveal";
@@ -10,8 +11,24 @@ import { Timeline } from "components/timeline/Timeline";
 import { TechStack } from "components/techStack/TechStack";
 import { Footer } from "components/footer/Footer";
 import Meta from "components/meta";
+import { Basics } from "types";
+import { fetchGithubBasics } from "utils";
 
-const Index = () => {
+interface IndexProps {
+  basics: Basics[];
+}
+
+export const getStaticProps: GetStaticProps<IndexProps> = async () => {
+  const basics = await fetchGithubBasics();
+  return {
+    props: {
+      basics,
+    },
+    revalidate: 3600,
+  };
+};
+
+const Index = ({ basics }: IndexProps) => {
   const timelineRef = useRef<HTMLDivElement>();
   const techStackRef = useRef<HTMLDivElement>();
   const contactRef = useRef<HTMLDivElement>();
@@ -30,10 +47,10 @@ const Index = () => {
           />
         </Reveal>
         <Reveal>
-          <Bio />
+          <Bio contactRef={contactRef} />
         </Reveal>
         <Reveal>
-          <Summary />
+          <Summary basics={basics} />
         </Reveal>
         <Reveal>
           <Timeline timelineRef={timelineRef} />
