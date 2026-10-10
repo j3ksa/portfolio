@@ -11,6 +11,7 @@ import { TypeAnimation } from "react-type-animation";
 import { welcomePhrases } from "info";
 import { scroll } from "utils";
 import { GeometryGame } from "components/geometryGame";
+import { BioDescription } from "./BioDescription";
 
 interface Props {
   contactRef?: React.MutableRefObject<HTMLDivElement>;
@@ -66,7 +67,7 @@ export const Bio = ({ contactRef }: Props) => {
           </Highlight>
         </Text>
         <Text fontSize={{ base: 22, md: 26 }} color="gray.200">
-          a frontend developer
+          a developer
         </Text>
         <Text fontSize={{ base: 18, md: 20 }} color="gray.400">
           and this is page about me.
@@ -124,7 +125,7 @@ export const Bio = ({ contactRef }: Props) => {
             Contact me
           </Box>
           <Link
-            href="/cv/ENG.pdf"
+            href="/cv/CVŁukaszJęksa.pdf"
             download="Łukasz Jęksa - CV"
             color="pink.400"
             fontWeight="semibold"
@@ -134,6 +135,8 @@ export const Bio = ({ contactRef }: Props) => {
           </Link>
         </HStack>
       </VStack>
+
+      <BioDescription />
 
       <GeometryGame />
     </Box>
