@@ -1,19 +1,19 @@
-import { Basics } from "@types";
+import { Basics } from "types";
 
 export const basics: Basics[] = [
   {
     id: "projects",
-    value: "16+",
+    value: "20+",
     description: "Projects build from scratch",
   },
   {
     id: "experience",
-    value: "3+",
+    value: "5+",
     description: "Years of experience",
   },
   {
-    id: "achievements",
-    value: "1",
+    id: "games",
+    value: "3",
     description: "Github achievements",
   },
   {

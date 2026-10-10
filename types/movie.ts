@@ -6,7 +6,7 @@ export interface InitialMovie {
   imdbID: string;
 }
 
-interface Ratings {
+export interface Ratings {
   Source: string;
   Value: string;
 }

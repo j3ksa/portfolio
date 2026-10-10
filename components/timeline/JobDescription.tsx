@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination, EffectCreative, Autoplay } from "swiper/modules";
 import { Link } from "@chakra-ui/next-js";
-import { Job } from "@types";
+import { Job } from "types";
 import { Divider } from "@chakra-ui/react";
 
 interface Props {

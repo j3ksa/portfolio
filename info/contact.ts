@@ -3,7 +3,7 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
 } from "react-icons/ai";
-import { Contact } from "@types";
+import { Contact } from "types";
 
 export const contacts: Contact[] = [
   {

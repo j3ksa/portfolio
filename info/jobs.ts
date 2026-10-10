@@ -10,7 +10,7 @@ import Guestline from "public/projects/guestline.png";
 import GigaClear from "public/projects/gigaclear.png";
 import BanachLogo from "public/logos/banachLogo.png";
 import SoundoshiLogo from "public/logos/soundhoshiLogo.svg";
-import { Job } from "@types";
+import { Job } from "types";
 
 export const jobs: Job[] = [
   {
