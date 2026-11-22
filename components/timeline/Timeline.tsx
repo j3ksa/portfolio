@@ -45,7 +45,7 @@ export const Timeline = ({ timelineRef }: Props) => {
         </Highlight>
       </Text>
       <Text color="gray.400" fontSize="sm" mb={6}>
-        Doświadczenie inżynieryjne w komercyjnych projektach enterprise, big data, AI oraz full-stack .NET
+        Software engineering experience across enterprise systems, big data, AI, and full-stack .NET
       </Text>
 
       <HStack

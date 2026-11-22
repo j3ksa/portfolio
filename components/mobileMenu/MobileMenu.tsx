@@ -88,7 +88,7 @@ export const MobileMenu = ({ refs }: Props) => {
                   fontWeight="bold"
                   _hover={{ bg: "green.400" }}
                 >
-                  Pobierz CV (PDF)
+                  Download CV (PDF)
                 </Button>
               </Link>
             </VStack>

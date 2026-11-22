@@ -92,7 +92,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                 _hover={{ bg: "gray.800", borderColor: "green.400" }}
                 size="sm"
               >
-                Wróć do Portfolio
+                Back to Portfolio
               </Button>
             </Link>
 
@@ -123,7 +123,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                 {game.platform}
               </Badge>
               <Badge colorScheme="gray" fontSize="sm" px={3} py={1} borderRadius="md">
-                Rok: {game.year}
+                Year: {game.year}
               </Badge>
             </HStack>
 
@@ -157,7 +157,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                   fontWeight="bold"
                   boxShadow="0 4px 14px rgba(250, 92, 92, 0.4)"
                 >
-                  Zagraj w grę na itch.io
+                  Play on itch.io
                 </Button>
               </Link>
 
@@ -176,7 +176,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                     _hover={{ bg: "gray.800" }}
                     size="lg"
                   >
-                    Kod na GitHub
+                    View on GitHub
                   </Button>
                 </Link>
               )}
@@ -253,7 +253,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                       <FaGamepad size={18} />
                     </Box>
                     <Text fontSize="2xl" fontWeight="bold">
-                      Opis gry
+                      Game Overview
                     </Text>
                   </HStack>
                   <Text
@@ -275,11 +275,11 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                       <FaCode size={18} />
                     </Box>
                     <Text fontSize="2xl" fontWeight="bold">
-                      Mój wkład i odpowiedzialność
+                      My Role & Contribution
                     </Text>
                   </HStack>
                   <Text fontSize="md" color="green.300" fontWeight="semibold" mb={3}>
-                    Rola w projekcie: {game.role}
+                    Role: {game.role}
                   </Text>
                   <List spacing={3}>
                     {game.myContribution.map((item, index) => (
@@ -311,7 +311,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                       <FaCheckCircle size={18} />
                     </Box>
                     <Text fontSize="2xl" fontWeight="bold">
-                      Kluczowe mechaniki i architektura
+                      Key Mechanics & Systems
                     </Text>
                   </HStack>
                   <List spacing={3}>
@@ -351,7 +351,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                   <HStack spacing={2} mb={4}>
                     <FaTools color="#38A169" />
                     <Text fontSize="lg" fontWeight="bold">
-                      Użyte narzędzia
+                      Tools & Tech
                     </Text>
                   </HStack>
                   <SimpleGrid columns={2} spacing={2}>
@@ -382,10 +382,10 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                   textAlign="center"
                 >
                   <Text fontSize="lg" fontWeight="bold" mb={2}>
-                    Chcesz zagrać?
+                    Playable Build
                   </Text>
                   <Text fontSize="sm" color="gray.400" mb={4}>
-                    Projekt jest publicznie dostępny i grywalny na itch.io.
+                    Play or download the game build directly on itch.io.
                   </Text>
                   <Link
                     href={game.itchUrl}
@@ -403,7 +403,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                       size="md"
                       fontWeight="bold"
                     >
-                      Otwórz na itch.io
+                      Open on itch.io
                     </Button>
                   </Link>
                 </Box>
@@ -418,7 +418,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                   textAlign="center"
                 >
                   <Text fontSize="md" fontWeight="bold" mb={2}>
-                    Pobierz moje CV
+                    Download Resume
                   </Text>
                   <Text fontSize="xs" color="gray.400" mb={3}>
                     Junior Game Developer | C# & Unity
@@ -436,7 +436,7 @@ export default function ProjectPage({ game }: ProjectPageProps) {
                       color="green.400"
                       _hover={{ bg: "green.400", color: "black" }}
                     >
-                      Pobierz CV (PDF)
+                      Download CV (PDF)
                     </Button>
                   </Link>
                 </Box>

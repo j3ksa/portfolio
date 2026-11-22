@@ -78,7 +78,7 @@ export const Header = ({
             _hover={{ bg: "green.400", color: "black" }}
             fontWeight="bold"
           >
-            Pobierz CV
+            Download CV
           </Button>
         </Link>
       </HStack>
