@@ -14,55 +14,78 @@ import { Job } from "types";
 
 export const jobs: Job[] = [
   {
-    id: "freelance",
-    name: "Freelance",
-    time: "4 months",
-    color: "green.300",
-    description: `
-            Welcome to my comprehensive portfolio, where I proudly present my extensive journey as a freelance Frontend Developer with over three years of hands-on experience in the field.  \n
-            My specialization lies in the creation of captivating one-page websites using React and Next.js. \n
-            This portfolio serves as a testament to my expertise, creativity, and unwavering commitment to crafting visually stunning, responsive, and high-performance web solutions that leave a lasting impression. \n
-        `,
-    monthsInWork: 4,
+    id: "rockwool",
+    name: "Rockwool",
+    time: "czerwiec 2025 - teraz",
+    role: "Full-stack .NET Developer",
+    color: "#E53E3E",
+    description: `Obecnie pracuję jako Full-stack .NET Developer w strukturach Rockwool. \n
+Rozwijam i utrzymuję krytyczne aplikacje wewnętrzne oraz zaawansowane oprogramowanie dedykowane fabrykom i liniom produkcyjnym. \n
+Praca w ekosystemie C# i .NET nad systemami o wysokiej niezawodności i wymaganiach przemysłowych doskonale łączy się z moją pasją do programowania gier i logiki systemowej w silniku Unity.`,
+    monthsInWork: 12,
+    technologies: ["C#", ".NET", "Full-stack", "Industrial Software", "System Architecture", "SQL"],
+  },
+  {
+    id: "cogen",
+    name: "Co-GEN",
+    time: "październik 2024 - marzec 2025",
+    role: "Full-stack Developer",
+    color: "#9F7AEA",
+    description: `Jako Full-stack Developer w Co-GEN brałem udział w rozwoju innowacyjnego projektu AI mającego na celu ułatwienie i automatyzację składania wniosków o dofinansowania. \n
+Moim głównym osiągnięciem było zaprojektowanie i wdrożenie od podstaw wydajnego parsera plików PDF, radzącego sobie ze złożonymi, wielkimi plikami i ekstrakcją danych pod modele sztucznej inteligencji. \n
+Odpowiadałem za pełny stos technologiczny – integrację backendu, endpointów i warstwy prezentacji.`,
+    monthsInWork: 6,
+    technologies: ["Full-stack", "TypeScript", "Node.js", "AI Integration", "High-Volume PDF Parser", "REST API"],
+  },
+  {
+    id: "bitpeak",
+    name: "BitPeak",
+    time: "grudzień 2023 - styczeń 2026",
+    role: "Frontend Developer",
+    color: "#38B2AC",
+    description: `W BitPeak pracowałem jako Frontend Developer przy zaawansowanym projekcie dla sektora lotniczego, operującym na architekturze Big Data. \n
+Zajmowałem się projektowaniem, optymalizacją oraz implementacją interfejsów do prezentacji i wizualizacji ogromnych zbiorów danych w czasie rzeczywistym. \n
+Odpowiadałem za wydajność renderowania, płynne zarządzanie stanem i bezawaryjną obsługę asynchronicznych strumieni danych.`,
+    monthsInWork: 25,
+    technologies: ["React", "TypeScript", "Big Data", "Data Visualization", "Async Streams", "Optimization"],
+  },
+  {
+    id: "soundoshi",
+    name: "Soundoshi",
+    time: "2 years",
+    role: "Co-founder & Frontend Developer",
+    image: SoundoshiLogo,
+    color: "#F16564",
+    description: `Niezwykłe dwa lata, podczas których byłem nie tylko programistą React, ale także współzałożycielem i osobą odpowiedzialną za rozwój platformy muzycznej "Soundoshi". \n
+Odpowiadałem za projektowanie i budowę front-endu w Next.js/React, integrację API, optymalizację wydajności oraz dostosowywanie interfejsu do potrzeb muzyków i fanów z całego świata. \n
+To doświadczenie nauczyło mnie zarządzania produktem, pracy w dynamicznym zespole i łączenia pasji z inżynierią.`,
+    monthsInWork: 24,
     projects: [
       {
-        id: "varomax",
-        name: "Varomax",
-        image: Varomax,
-        link: "https://www.varomax.pl/",
+        id: "soundoshi",
+        name: "Soundoshi",
+        image: Soundoshi,
+        link: "https://www.soundoshi.com/",
       },
       {
-        id: "diamond",
-        name: "Diamond Fleet",
-        image: Diamond,
-        link: "https://www.diamondfleet.pl/",
-      },
-      {
-        id: "hotels",
-        name: "Hotels",
-        image: Guestline,
-        link: "https://hotels-j3ksa.vercel.app/",
-      },
-      {
-        id: "gigaclear",
-        name: "Gigaclear Code Challenge",
-        image: GigaClear,
-        link: "https://gigaclear-code-challenge.vercel.app/",
+        id: "auction",
+        name: "Auction",
+        image: Auction,
+        link: "https://pray-for-ukraine.vercel.app/",
       },
     ],
+    technologies: ["Next.js", "React", "TypeScript", "Audio Platform", "WebSockets"],
   },
   {
     id: "banach",
     name: "Banach Group",
     time: "8 months",
+    role: "React Frontend Developer",
     image: BanachLogo,
     color: "white",
-    description: `
-            My work as a React Front-end developer for a Banach Group, building web applications related to blockchain, was filled with challenges and opportunities for development. \n
-            I had the opportunity to work on various projects, designing user interfaces, creating prototypes, and developing React components. I actively participated in our team meetings where we discussed project details and collectively solved technical problems. \n
-            Throughout the year, I gained increasing knowledge about blockchain and its applications. My work involved creating applications that enabled users to interact with crypto, providing me with the opportunity to work on innovative solutions. \n
-            Working as a programmer in such an environment not only developed my technical skills but also required continuous learning, adapting to the dynamic blockchain market, and collaborating with my team to create innovative web applications. It was a fascinating and satisfying professional journey. \n
-        `,
+    description: `Praca na stanowisku React Frontend Developera w Banach Group, gdzie tworzyłem aplikacje internetowe i interfejsy związane z technologią blockchain. \n
+Projektowałem komponenty React, prototypowałem UI/UX oraz współpracowałem z zespołem inżynierów nad architekturą aplikacji internetowych. \n
+Głęboko rozwinąłem umiejętności rozwiązywania problemów technicznych, pracy zespołowej w metodykach zwinnych oraz adaptacji do szybko zmieniających się wymagań rynku.`,
     monthsInWork: 8,
     projects: [
       {
@@ -90,33 +113,43 @@ export const jobs: Job[] = [
         link: "https://paybsv.vercel.app/",
       },
     ],
+    technologies: ["React", "JavaScript", "UI/UX Prototyping", "State Management"],
   },
   {
-    id: "soundoshi",
-    name: "Soundoshi",
-    time: "2 years",
-    image: SoundoshiLogo,
-    color: "#F16564",
-    description: `
-            Those were incredible two years during which I was not only a React developer but also a co-founder and programmer responsible for the development of the music application called "Soundoshi." Our journey began in October 2021 when the dream of creating an innovative music platform became a reality. \n
-            At the outset, we had only a vision. We wanted to create a place where musicians and fans could connect and make music together, regardless of their geographic location. Using Next.js for the past years, I knew that this technology was the perfect tool for creating interactive user interfaces. \n
-            Over this two-year period, we continuously improved our application. I was responsible for developing the front-end, adding new features, improving performance, and adjusting the user interface to the changing needs of our users. \n
-            During these two years, I experienced many challenges and successes. I was a React developer, but also a co-founder of something that had the potential to change the way people create and experience music online. This experience taught me that combining passion with programming skills can truly yield revolutionary results. \n
-        `,
-    monthsInWork: 24,
+    id: "freelance",
+    name: "Freelance",
+    time: "4 months",
+    role: "Freelance Developer",
+    color: "green.300",
+    description: `Działalność jako niezależny programista, realizujący dedykowane strony oraz responsywne aplikacje internetowe w Next.js i React dla klientów biznesowych. \n
+Samodzielna realizacja pełnego cyklu życia projektów: od analizy wymagań klienta, przez implementację, po deployment i monitoring.`,
+    monthsInWork: 4,
     projects: [
       {
-        id: "soundoshi",
-        name: "Soundoshi",
-        image: Soundoshi,
-        link: "https://www.soundoshi.com/",
+        id: "varomax",
+        name: "Varomax",
+        image: Varomax,
+        link: "https://www.varomax.pl/",
       },
       {
-        id: "auction",
-        name: "Auction",
-        image: Auction,
-        link: "https://pray-for-ukraine.vercel.app/",
+        id: "diamond",
+        name: "Diamond Fleet",
+        image: Diamond,
+        link: "https://www.diamondfleet.pl/",
+      },
+      {
+        id: "hotels",
+        name: "Hotels",
+        image: Guestline,
+        link: "https://hotels-j3ksa.vercel.app/",
+      },
+      {
+        id: "gigaclear",
+        name: "Gigaclear Code Challenge",
+        image: GigaClear,
+        link: "https://gigaclear-code-challenge.vercel.app/",
       },
     ],
+    technologies: ["Next.js", "React", "TypeScript", "Performance"],
   },
 ];

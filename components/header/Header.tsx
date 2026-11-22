@@ -1,20 +1,34 @@
-import { Flex, Spacer, HStack, Highlight } from "@chakra-ui/react";
+import { Flex, Spacer, HStack, Highlight, Button } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import { categories } from "info";
 import { MobileMenu } from "components/mobileMenu/MobileMenu";
 import { scroll } from "utils";
 
 interface Props {
-  timelineRef: React.MutableRefObject<HTMLDivElement>;
-  techStackRef: React.MutableRefObject<HTMLDivElement>;
-  contactRef: React.MutableRefObject<HTMLDivElement>;
+  aboutRef?: React.MutableRefObject<HTMLDivElement>;
+  projectsRef?: React.MutableRefObject<HTMLDivElement>;
+  timelineRef?: React.MutableRefObject<HTMLDivElement>;
+  techStackRef?: React.MutableRefObject<HTMLDivElement>;
+  contactRef?: React.MutableRefObject<HTMLDivElement>;
 }
 
-export const Header = ({ timelineRef, techStackRef, contactRef }: Props) => {
-  const refs = [timelineRef, techStackRef, contactRef];
+export const Header = ({
+  aboutRef,
+  projectsRef,
+  timelineRef,
+  techStackRef,
+  contactRef,
+}: Props) => {
+  const refs = [
+    aboutRef,
+    projectsRef,
+    timelineRef,
+    techStackRef,
+    contactRef,
+  ].filter(Boolean) as React.MutableRefObject<HTMLDivElement>[];
 
   return (
-    <Flex as="nav" bg="black" width="100%" py={6}>
+    <Flex as="nav" bg="black" width="100%" py={6} align="center">
       <Link href="/" fontSize={24} fontWeight="600">
         <Highlight
           query={["j3ksa.icu"]}
@@ -31,20 +45,42 @@ export const Header = ({ timelineRef, techStackRef, contactRef }: Props) => {
         </Highlight>
       </Link>
       <Spacer />
-      <HStack spacing={10} display={{ base: "none", md: "flex" }}>
+      <HStack spacing={8} display={{ base: "none", md: "flex" }} align="center">
         {categories.map((category) => (
           <Link
             key={category.id}
-            ref={refs[category.id]}
-            href=""
+            href={`/#${category.id}`}
             id={category.id}
-            onClick={() => scroll(category.id, refs)}
+            onClick={(e) => {
+              if (refs.length > 0) {
+                e.preventDefault();
+                scroll(category.id, refs);
+              }
+            }}
             color="white"
-            _hover={{ color: "green.500" }}
+            fontWeight="500"
+            _hover={{ color: "green.400" }}
           >
             {category.name}
           </Link>
         ))}
+
+        <Link
+          href="/cv/Lukasz_Jeksa_CV.pdf"
+          download="Lukasz_Jeksa_CV.pdf"
+          style={{ textDecoration: "none" }}
+        >
+          <Button
+            size="sm"
+            variant="outline"
+            borderColor="green.400"
+            color="green.400"
+            _hover={{ bg: "green.400", color: "black" }}
+            fontWeight="bold"
+          >
+            Pobierz CV
+          </Button>
+        </Link>
       </HStack>
       <MobileMenu refs={refs} />
     </Flex>

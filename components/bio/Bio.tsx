@@ -14,10 +14,11 @@ import { GeometryGame } from "components/geometryGame";
 import { BioDescription } from "./BioDescription";
 
 interface Props {
+  aboutRef?: React.MutableRefObject<HTMLDivElement>;
   contactRef?: React.MutableRefObject<HTMLDivElement>;
 }
 
-export const Bio = ({ contactRef }: Props) => {
+export const Bio = ({ aboutRef, contactRef }: Props) => {
   const n = 1;
   const phrasesWithDelay = welcomePhrases.reduce((list, el, i) => {
     list.push(el);
@@ -28,6 +29,8 @@ export const Bio = ({ contactRef }: Props) => {
   return (
     <Box
       as="section"
+      ref={aboutRef}
+      id="about"
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -41,11 +44,11 @@ export const Bio = ({ contactRef }: Props) => {
         align="center"
         textAlign="center"
         width="100%"
-        maxW="640px"
+        maxW="680px"
       >
         <Text
           display="flex"
-          fontSize={{ base: 28, md: 36 }}
+          fontSize={{ base: 28, md: 38 }}
           fontWeight="bold"
           alignItems="center"
           justifyContent="center"
@@ -66,11 +69,16 @@ export const Bio = ({ contactRef }: Props) => {
             Łukasz Jęksa
           </Highlight>
         </Text>
-        <Text fontSize={{ base: 22, md: 26 }} color="gray.200">
-          a developer
+        <Text
+          fontSize={{ base: 22, md: 28 }}
+          color="green.400"
+          fontWeight="bold"
+          letterSpacing="wide"
+        >
+          Junior Game Developer · C# & Unity
         </Text>
-        <Text fontSize={{ base: 18, md: 20 }} color="gray.400">
-          and this is page about me.
+        <Text fontSize={{ base: 16, md: 18 }} color="gray.300">
+          Game Development student at CDV Poznań · 5+ years software engineering experience
         </Text>
         <Code
           variant="outline"
@@ -125,8 +133,8 @@ export const Bio = ({ contactRef }: Props) => {
             Contact me
           </Box>
           <Link
-            href="/cv/CVŁukaszJęksa.pdf"
-            download="Łukasz Jęksa - CV"
+            href="/cv/Lukasz_Jeksa_CV.pdf"
+            download="Lukasz_Jeksa_CV.pdf"
             color="pink.400"
             fontWeight="semibold"
             _hover={{ color: "pink.300", textDecoration: "underline" }}

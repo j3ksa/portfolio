@@ -4,18 +4,63 @@ import {
   BiLogoJavascript,
   BiLogoTypescript,
   BiLogoTailwindCss,
-  BiLogoRedux,
-  BiLogoSass,
   BiLogoDocker,
-  BiLogoGraphql,
   BiSolidCloud,
   BiLogoGit,
 } from "react-icons/bi";
-import { SiJest, SiStorybook } from "react-icons/si";
+import { SiJest, SiUnity, SiCsharp, SiBlender, SiFigma } from "react-icons/si";
+import { FiVolume2 } from "react-icons/fi";
 import { RiBearSmileFill } from "react-icons/ri";
-import { GiOctopus } from "react-icons/gi";
 
 export const skills: Skill[] = [
+  {
+    id: "unity",
+    name: "Unity Engine",
+    icon: SiUnity,
+    color: "#FFFFFF",
+  },
+  {
+    id: "csharp",
+    name: "C#",
+    icon: SiCsharp,
+    color: "#9B4993",
+  },
+  {
+    id: "fmod",
+    name: "FMOD Audio",
+    icon: FiVolume2,
+    color: "#00A3E0",
+  },
+  {
+    id: "git",
+    name: "Git & GitHub",
+    icon: BiLogoGit,
+    color: "#F1502F",
+  },
+  {
+    id: "blender",
+    name: "Blender 3D",
+    icon: SiBlender,
+    color: "#EA7600",
+  },
+  {
+    id: "figma",
+    name: "Figma UI/UX",
+    icon: SiFigma,
+    color: "#A259FF",
+  },
+  {
+    id: "ts",
+    name: "TypeScript",
+    icon: BiLogoTypescript,
+    color: "#007acc",
+  },
+  {
+    id: "js",
+    name: "JavaScript",
+    icon: BiLogoJavascript,
+    color: "#F0DB4F",
+  },
   {
     id: "next",
     name: "Next.js",
@@ -29,70 +74,10 @@ export const skills: Skill[] = [
     color: "#61DBFB",
   },
   {
-    id: "js",
-    name: "javascript",
-    icon: BiLogoJavascript,
-    color: "#F0DB4F",
-  },
-  {
-    id: "ts",
-    name: "typescript",
-    icon: BiLogoTypescript,
-    color: "#007acc ",
-  },
-  {
-    id: "tailwind",
-    name: "tailwindCSS",
-    icon: BiLogoTailwindCss,
-    color: "#06b6d4",
-  },
-  {
-    id: "sass",
-    name: "Sass",
-    icon: BiLogoSass,
-    color: "#c69",
-  },
-  {
-    id: "redux",
-    name: "Redux",
-    icon: BiLogoRedux,
-    color: "#00a7e5",
-  },
-  {
-    id: "zustand",
-    name: "Zustand",
+    id: "arch",
+    name: "State Systems",
     icon: RiBearSmileFill,
     color: "#ECB63F",
-  },
-  {
-    id: "jest",
-    name: "Jest",
-    icon: SiJest,
-    color: "#C63D14",
-  },
-  {
-    id: "reactTesting",
-    name: "RTL",
-    icon: GiOctopus,
-    color: "#FC4544",
-  },
-  {
-    id: "storybook",
-    name: "StoryBook",
-    icon: SiStorybook,
-    color: "#FF4785",
-  },
-  {
-    id: "graph",
-    name: "GraphQl",
-    icon: BiLogoGraphql,
-    color: "#e535ab",
-  },
-  {
-    id: "rest",
-    name: "RestApi",
-    icon: BiSolidCloud,
-    color: "#002C51",
   },
   {
     id: "docker",
@@ -101,9 +86,21 @@ export const skills: Skill[] = [
     color: "#0db7ed",
   },
   {
-    id: "git",
-    name: "Git",
-    icon: BiLogoGit,
-    color: "#F1502F",
+    id: "rest",
+    name: "REST API",
+    icon: BiSolidCloud,
+    color: "#002C51",
+  },
+  {
+    id: "jest",
+    name: "Unit Testing",
+    icon: SiJest,
+    color: "#C63D14",
+  },
+  {
+    id: "tailwind",
+    name: "Tailwind CSS",
+    icon: BiLogoTailwindCss,
+    color: "#06b6d4",
   },
 ];

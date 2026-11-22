@@ -7,6 +7,7 @@ import { Box } from "@chakra-ui/react";
 import { Header } from "components/header/Header";
 import { Bio } from "components/bio/Bio";
 import { Summary } from "components/summary/Summary";
+import { ProjectsSection } from "components/projects/ProjectsSection";
 import { Timeline } from "components/timeline/Timeline";
 import { TechStack } from "components/techStack/TechStack";
 import { Footer } from "components/footer/Footer";
@@ -29,29 +30,40 @@ export const getStaticProps: GetStaticProps<IndexProps> = async () => {
 };
 
 const Index = ({ basics }: IndexProps) => {
+  const aboutRef = useRef<HTMLDivElement>();
+  const projectsRef = useRef<HTMLDivElement>();
   const timelineRef = useRef<HTMLDivElement>();
   const techStackRef = useRef<HTMLDivElement>();
   const contactRef = useRef<HTMLDivElement>();
+
   return (
     <Box bg="black">
       <Meta />
       <Head>
-        <title>{`Home`}</title>
+        <title>Łukasz Jęksa - Junior Game Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio Junior Game Developera (C# & Unity) – grywalne projekty, gry na itch.io, mechaniki i architektura oprogramowania."
+        />
       </Head>
       <Layout>
         <Reveal>
           <Header
+            aboutRef={aboutRef}
+            projectsRef={projectsRef}
             timelineRef={timelineRef}
             techStackRef={techStackRef}
             contactRef={contactRef}
           />
         </Reveal>
         <Reveal>
-          {/* Bio with interactive Geometry Reflex game */}
-          <Bio contactRef={contactRef} />
+          <Bio aboutRef={aboutRef} contactRef={contactRef} />
         </Reveal>
         <Reveal>
           <Summary basics={basics} />
+        </Reveal>
+        <Reveal>
+          <ProjectsSection projectsRef={projectsRef} />
         </Reveal>
         <Reveal>
           <Timeline timelineRef={timelineRef} />

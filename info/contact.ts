@@ -3,9 +3,17 @@ import {
   AiOutlineGithub,
   AiOutlineMail,
 } from "react-icons/ai";
+import { SiItchdotio } from "react-icons/si";
 import { Contact } from "types";
 
 export const contacts: Contact[] = [
+  {
+    id: "itch",
+    link: "https://j3ksa.itch.io",
+    icon: SiItchdotio,
+    color: "#FA5C5C",
+    text: "Play games on",
+  },
   {
     id: "linked",
     link: "https://www.linkedin.com/in/łukasz-jęksa/",

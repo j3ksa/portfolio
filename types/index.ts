@@ -1,6 +1,7 @@
 export * from "./basics";
 export * from "./categories";
 export * from "./contact";
+export * from "./game";
 export * from "./job";
 export * from "./links";
 export * from "./movie";

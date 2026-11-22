@@ -1,0 +1,107 @@
+import { GameProject } from "types/game";
+
+export const games: GameProject[] = [
+  {
+    id: "pharmacy",
+    slug: "pharmacy",
+    title: "Pharmacy",
+    subtitle: "Post-apocalyptic RPG survival experience",
+    genre: "Role Playing / Survival",
+    role: "Gameplay Programmer & Game Designer",
+    platform: "Windows (PC) · itch.io",
+    year: "2024",
+    description:
+      "Pharmacy to nastrojowa gra RPG osadzona w ponurym, postapokaliptycznym świecie. Gracz wciela się w postać samotnego ocalałego, którego celem jest odnalezienie oraz przygotowanie lekarstwa na tajemniczą, śmiertelną chorobę dziesiątkującą resztki ludzkości. Rozgrywka kładzie nacisk na eksplorację, zarządzanie surowcami oraz dokonywanie trudnych wyborów w atmosferze ciągłego zagrożenia.",
+    myContribution: [
+      "Współautorstwo projektu gry, projektowanie pętli rozgrywki (core gameplay loop) oraz sekwencji fabularnych.",
+      "Oprogramowanie w C# logiki interakcji ze światem, zbierania zasobów i systemu wytwarzania lekarstw (crafting).",
+      "Integracja dynamicznego udźwiękowienia za pomocą FMOD – stworzenie przestrzennych efektów dźwiękowych otoczenia i udźwiękowienie interakcji.",
+      "Balans parametrów przetrwania postaci, eliminacja błędów oraz przygotowanie stabilnego buildu na platformę Windows.",
+    ],
+    tools: ["Unity", "C#", "FMOD Audio", "Photoshop", "Git"],
+    itchUrl: "https://fragtrap.itch.io/pharmacy",
+    coverImage: "/projects/games/pharmacy-cover.png",
+    screenshots: [
+      "/projects/games/pharmacy-cover.png",
+      "/projects/games/pharmacy-1.png",
+      "/projects/games/pharmacy-2.png",
+    ],
+    highlights: [
+      "Klimatyczna narracja i eksploracja świata pogrążonego w pandemii",
+      "Autorski system wytwarzania lekarstw oraz zarządzania stanem ocalałego",
+      "Dynamiczna warstwa dźwiękowa zrealizowana przy użyciu silnika audio FMOD",
+      "Dostępna publicznie grywalna wersja na platformie itch.io",
+    ],
+  },
+  {
+    id: "beergeon",
+    slug: "beergeon",
+    title: "Beergeon",
+    subtitle: "Retro 3D first-person dungeon crawler with 2D billboard sprites",
+    genre: "Dungeon Crawler / Rogue-lite",
+    role: "Lead Developer & System Architect",
+    platform: "PC (Windows / WebGL) · itch.io",
+    year: "2024",
+    description:
+      "Beergeon to pierwszoosobowy dungeon crawler 3D inspirowany klasykami gatunku, wykorzystujący technikę billboardingu dwuwymiarowych sprite'ów w trójwymiarowym otoczeniu. Gra łączy proceduralne generowanie poziomów z rozbudowanym systemem RPG – klasami postaci, statystykami, drzewkami umiejętności oraz losowanym ekwipunkiem (loot tables).",
+    myContribution: [
+      "Projekt i wdrożenie elastycznej architektury danych opartej na Unity ScriptableObjects (przedmioty, skille, klasy postaci, tabele dropów).",
+      "Implementacja algorytmu proceduralnego generowania układu lochów, korytarzy oraz rozmieszczania przeciwników i skarbów.",
+      "Zaprogramowanie responsywnego kontrolera pierwszoosobowego oraz mechaniki walki w czasie rzeczywistym.",
+      "Opracowanie pełnej dokumentacji technicznej i projektowej (GDD) oraz nadzór nad strukturą repozytorium i standardami kodu w zespole.",
+    ],
+    tools: ["Unity", "C#", "Aseprite", "ScriptableObjects", "Git / GitHub"],
+    itchUrl: "https://j3ksa.itch.io/beergeon",
+    githubUrl: "https://github.com/j3ksa/beergeon_v2",
+    coverImage: "/projects/games/beergeon-cover.png",
+    screenshots: [
+      "/projects/games/beergeon-cover.png",
+      "/projects/games/beergeon-1.png",
+    ],
+    highlights: [
+      "Proceduralna generacja lochów zapewniająca unikalne podejścia przy każdym podejściu",
+      "Hybrydowa oprawa wizualna: grafika 2D w przestrzeni 3D (billboard sprites)",
+      "Modułowa architektura bazująca na ScriptableObjects ułatwiająca balansowanie statystyk",
+      "Pełne wersjonowanie kodu i profesjonalny Git workflow z code review",
+    ],
+  },
+  {
+    id: "multiplayer-defense",
+    slug: "multiplayer-defense",
+    title: "Multiplayer Tower Defense",
+    subtitle: "Networked hybrid strategy & first-person shooter in Unity 6",
+    genre: "Co-op / Multiplayer Shooter & Tower Defense",
+    role: "Lead Networking & UI Systems Developer",
+    platform: "PC (Windows Standalone) · itch.io",
+    year: "2025",
+    description:
+      "Wieloosobowa hybryda strategii tower defense oraz strzelanki z perspektywy pierwszej osoby stworzona w Unity 6. Gracze współpracują na szczycie wieży, odpierając nacierające fale przeciwników z góry lub mierzą się w trybie PvP. Projekt skupia się na stabilnej synchronizacji sieciowej w architekturze klient-serwer oraz płynnym dołączaniu do gier.",
+    myContribution: [
+      "Zaprojektowanie i wdrożenie architektury sieciowej z użyciem Unity Netcode for GameObjects (NGO) i Unity Transport (UTP).",
+      "Integracja Unity Relay & Authentication pozwalająca na stabilne połączenia WAN bez potrzeby konfiguracji przekierowań portów (port forwarding).",
+      "Implementacja protokołu LAN Discovery opartego na rozgłoszeniach UDP do automatycznego wyszukiwania lokalnych serwerów.",
+      "Stworzenie interfejsu matchmakera (ConnectionHUD) oraz zsynchronizowanego lobby przedmeczowego z obsługą gotowości graczy (Ready Check).",
+    ],
+    tools: [
+      "Unity 6",
+      "C#",
+      "Netcode for GameObjects",
+      "Unity Relay",
+      "UDP Discovery",
+      "Git",
+    ],
+    itchUrl: "https://j3ksa.itch.io/multiplayer-defense",
+    githubUrl: "https://github.com/j3ksa/multiplayer-game",
+    coverImage: "/projects/games/multiplayer-cover.png",
+    screenshots: [
+      "/projects/games/multiplayer-cover.png",
+      "/projects/games/multiplayer-1.png",
+    ],
+    highlights: [
+      "Autorytatywny model sieciowy host/klient zsynchronizowany przez Netcode for GameObjects",
+      "Cross-network matchmaking dzięki serwisowi Unity Relay z 6-znakowymi kodami pokoju",
+      "Lokalne rozgłaszanie UDP wykrywające gry w sieci LAN bez udziału serwerów zewnętrznych",
+      "Zbudowane zgodnie z najnowszymi standardami silnika Unity 6",
+    ],
+  },
+];
