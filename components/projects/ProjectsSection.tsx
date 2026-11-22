@@ -49,8 +49,8 @@ export const ProjectsSection = ({ projectsRef }: Props) => {
           </Highlight>
         </Text>
         <Text color="gray.300" fontSize={{ base: 14, md: 16 }} maxW="720px">
-          Grywalne projekty gier stworzone w Unity i C# z pełną dokumentacją,
-          opisem wkładu oraz linkami do pobrania / zagrania na platformie itch.io.
+          Interactive game projects created in Unity and C# with full documentation,
+          contribution descriptions, and links for download / play on the itch.io platform.
         </Text>
       </VStack>
 
@@ -120,7 +120,7 @@ export const ProjectsSection = ({ projectsRef }: Props) => {
                   {game.title}
                 </Text>
                 <Text fontSize="sm" color="green.400" fontWeight="medium">
-                  Rola: {game.role}
+                  Role: {game.role}
                 </Text>
                 <Text fontSize="sm" color="gray.300" noOfLines={3} lineHeight="tall">
                   {game.description}
@@ -160,7 +160,7 @@ export const ProjectsSection = ({ projectsRef }: Props) => {
                     size="md"
                     fontWeight="bold"
                   >
-                    Osobna podstrona projektu
+                    Individual Project Page
                   </Button>
                 </Link>
 
@@ -181,7 +181,7 @@ export const ProjectsSection = ({ projectsRef }: Props) => {
                     size="md"
                     fontWeight="semibold"
                   >
-                    Zagraj na itch.io
+                    Play on itch.io
                   </Button>
                 </Link>
               </VStack>
@@ -211,16 +211,16 @@ export const ProjectsSection = ({ projectsRef }: Props) => {
           </Box>
           <VStack align="flex-start" spacing={0}>
             <Text color="white" fontWeight="bold" fontSize="lg">
-              Bonusowy projekt interaktywny: Geometry Reflex
+              Bonus Interactive Project: Geometry Reflex
             </Text>
             <Text color="gray.400" fontSize="sm">
-              Szybka zręcznościowa minigra reakcyjna zaimplementowana bezpośrednio w React/SVG (dostępna wyżej w sekcji Bio).
+              A fast-paced reflex game implemented directly in React/SVG (available above in the Bio section).
             </Text>
           </VStack>
         </HStack>
         <Link href="#about">
           <Button variant="ghost" color="green.400" _hover={{ bg: "whiteAlpha.100" }}>
-            Zagraj powyżej ↑
+            Play above ↑
           </Button>
         </Link>
       </Box>

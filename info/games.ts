@@ -11,12 +11,12 @@ export const games: GameProject[] = [
     platform: "Windows (PC) · itch.io",
     year: "2024",
     description:
-      "Pharmacy to nastrojowa gra RPG osadzona w ponurym, postapokaliptycznym świecie. Gracz wciela się w postać samotnego ocalałego, którego celem jest odnalezienie oraz przygotowanie lekarstwa na tajemniczą, śmiertelną chorobę dziesiątkującą resztki ludzkości. Rozgrywka kładzie nacisk na eksplorację, zarządzanie surowcami oraz dokonywanie trudnych wyborów w atmosferze ciągłego zagrożenia.",
+      "Pharmacy is an atmospheric RPG set in a bleak, post-apocalyptic world. The player takes on the role of a lone survivor whose goal is to find and develop a cure for a mysterious, deadly disease that is decimating what remains of humanity. The gameplay emphasizes exploration, resource management, and making difficult choices amid a constant sense of danger.",
     myContribution: [
-      "Współautorstwo projektu gry, projektowanie pętli rozgrywki (core gameplay loop) oraz sekwencji fabularnych.",
-      "Oprogramowanie w C# logiki interakcji ze światem, zbierania zasobów i systemu wytwarzania lekarstw (crafting).",
-      "Integracja dynamicznego udźwiękowienia za pomocą FMOD – stworzenie przestrzennych efektów dźwiękowych otoczenia i udźwiękowienie interakcji.",
-      "Balans parametrów przetrwania postaci, eliminacja błędów oraz przygotowanie stabilnego buildu na platformę Windows.",
+      "Co-author of the game design, design of the core gameplay loop, and story sequences.",
+      "Programming in C# the logic for world interactions, resource gathering, and the crafting system.",
+      "Integration of dynamic audio using FMOD – creating spatial sound effects for the environment and interactions.",
+      "Balancing character survival parameters, bug fixing, and preparing a stable build for the Windows platform.",
     ],
     tools: ["Unity", "C#", "FMOD Audio", "Photoshop", "Git"],
     itchUrl: "https://fragtrap.itch.io/pharmacy",
@@ -27,10 +27,10 @@ export const games: GameProject[] = [
       "/projects/games/pharmacy-2.png",
     ],
     highlights: [
-      "Klimatyczna narracja i eksploracja świata pogrążonego w pandemii",
-      "Autorski system wytwarzania lekarstw oraz zarządzania stanem ocalałego",
-      "Dynamiczna warstwa dźwiękowa zrealizowana przy użyciu silnika audio FMOD",
-      "Dostępna publicznie grywalna wersja na platformie itch.io",
+      "Atmospheric narrative and world exploration set in a pandemic-plagued wasteland",
+      "Original crafting system and survivor state management",
+      "Dynamic audio layer implemented with the FMOD audio engine",
+      "Publicly available playable version on the itch.io platform",
     ],
   },
   {
@@ -43,12 +43,12 @@ export const games: GameProject[] = [
     platform: "PC (Windows / WebGL) · itch.io",
     year: "2024",
     description:
-      "Beergeon to pierwszoosobowy dungeon crawler 3D inspirowany klasykami gatunku, wykorzystujący technikę billboardingu dwuwymiarowych sprite'ów w trójwymiarowym otoczeniu. Gra łączy proceduralne generowanie poziomów z rozbudowanym systemem RPG – klasami postaci, statystykami, drzewkami umiejętności oraz losowanym ekwipunkiem (loot tables).",
+      "Beergeon is a retro 3D first-person dungeon crawler inspired by genre classics, utilizing the billboard technique for 2D sprites in a 3D environment. The game combines procedural level generation with a robust RPG system – character classes, statistics, skill trees, and randomly generated loot (loot tables).",
     myContribution: [
-      "Projekt i wdrożenie elastycznej architektury danych opartej na Unity ScriptableObjects (przedmioty, skille, klasy postaci, tabele dropów).",
-      "Implementacja algorytmu proceduralnego generowania układu lochów, korytarzy oraz rozmieszczania przeciwników i skarbów.",
-      "Zaprogramowanie responsywnego kontrolera pierwszoosobowego oraz mechaniki walki w czasie rzeczywistym.",
-      "Opracowanie pełnej dokumentacji technicznej i projektowej (GDD) oraz nadzór nad strukturą repozytorium i standardami kodu w zespole.",
+      "Project and implementation of a flexible data architecture based on Unity ScriptableObjects (items, skills, character classes, drop tables).",
+      "Implementation of a procedural algorithm for generating dungeon layouts, corridors, and enemy/item placements.",
+      "Programming of a responsive first-person controller and real-time combat mechanics.",
+      "Development of comprehensive technical and project documentation (GDD) and oversight of the repository structure and code standards within the team.",
     ],
     tools: ["Unity", "C#", "Aseprite", "ScriptableObjects", "Git / GitHub"],
     itchUrl: "https://j3ksa.itch.io/beergeon",
@@ -59,10 +59,10 @@ export const games: GameProject[] = [
       "/projects/games/beergeon-1.png",
     ],
     highlights: [
-      "Proceduralna generacja lochów zapewniająca unikalne podejścia przy każdym podejściu",
-      "Hybrydowa oprawa wizualna: grafika 2D w przestrzeni 3D (billboard sprites)",
-      "Modułowa architektura bazująca na ScriptableObjects ułatwiająca balansowanie statystyk",
-      "Pełne wersjonowanie kodu i profesjonalny Git workflow z code review",
+      "Procedural level generation ensuring unique experiences with each playthrough",
+      "Hybrid visual style: 2D graphics in a 3D environment (billboard sprites)",
+      "Modular architecture based on ScriptableObjects facilitating stat balancing",
+      "Complete code versioning and professional Git workflow with code review",
     ],
   },
   {
@@ -75,12 +75,12 @@ export const games: GameProject[] = [
     platform: "PC (Windows Standalone) · itch.io",
     year: "2025",
     description:
-      "Wieloosobowa hybryda strategii tower defense oraz strzelanki z perspektywy pierwszej osoby stworzona w Unity 6. Gracze współpracują na szczycie wieży, odpierając nacierające fale przeciwników z góry lub mierzą się w trybie PvP. Projekt skupia się na stabilnej synchronizacji sieciowej w architekturze klient-serwer oraz płynnym dołączaniu do gier.",
+      "A multiplayer hybrid of tower defense and first-person shooter created in Unity 6. Players collaborate at the top of the tower, defending against incoming waves of enemies from above or engaging in PvP mode. The project focuses on stable network synchronization within a client-server architecture and seamless game joining.",
     myContribution: [
-      "Zaprojektowanie i wdrożenie architektury sieciowej z użyciem Unity Netcode for GameObjects (NGO) i Unity Transport (UTP).",
-      "Integracja Unity Relay & Authentication pozwalająca na stabilne połączenia WAN bez potrzeby konfiguracji przekierowań portów (port forwarding).",
-      "Implementacja protokołu LAN Discovery opartego na rozgłoszeniach UDP do automatycznego wyszukiwania lokalnych serwerów.",
-      "Stworzenie interfejsu matchmakera (ConnectionHUD) oraz zsynchronizowanego lobby przedmeczowego z obsługą gotowości graczy (Ready Check).",
+      "Design and implementation of the network architecture using Unity Netcode for GameObjects (NGO) and Unity Transport (UTP).",
+      "Integration of Unity Relay & Authentication enabling stable WAN connections without the need for port forwarding configuration.",
+      "Implementation of the LAN Discovery protocol based on UDP broadcasts for automatic detection of local servers.",
+      "Creation of the matchmaker interface (ConnectionHUD) and synchronized pre-match lobby with player readiness management (Ready Check).",
     ],
     tools: [
       "Unity 6",
@@ -98,10 +98,10 @@ export const games: GameProject[] = [
       "/projects/games/multiplayer-1.png",
     ],
     highlights: [
-      "Autorytatywny model sieciowy host/klient zsynchronizowany przez Netcode for GameObjects",
-      "Cross-network matchmaking dzięki serwisowi Unity Relay z 6-znakowymi kodami pokoju",
-      "Lokalne rozgłaszanie UDP wykrywające gry w sieci LAN bez udziału serwerów zewnętrznych",
-      "Zbudowane zgodnie z najnowszymi standardami silnika Unity 6",
+      "An authoritative host/client network model synchronized by Netcode for GameObjects",
+      "Cross-network matchmaking via Unity Relay with 6-character room codes",
+      "Local UDP broadcasting for detecting games on the local network without external servers",
+      "Built according to the latest Unity 6 engine standards",
     ],
   },
 ];
