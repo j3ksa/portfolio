@@ -167,6 +167,9 @@ export default function ProjectPage({ game, prevGame, nextGame }: ProjectPagePro
               <Text fontSize={{ base: "md", md: "lg" }} fontWeight="bold" color="white">
                 {game.primaryFocus}
               </Text>
+              <Text fontSize="sm" color="gray.300" mt={2}>
+                Team size: {game.teamSize} people
+              </Text>
             </Box>
 
             {/* CTA Buttons */}
@@ -219,7 +222,11 @@ export default function ProjectPage({ game, prevGame, nextGame }: ProjectPagePro
               <VStack align="stretch" spacing={12}>
                 {/* Devlog Entries */}
                 {game.devlog && game.devlog.length > 0 ? (
-                  game.devlog.map((section, index) => (
+                  game.devlog.map((section, index) => {
+                    const isGif = Boolean(
+                      section.image?.toLowerCase().endsWith(".gif"),
+                    );
+                    return (
                     <Box
                       key={index}
                       bg="gray.900"
@@ -282,14 +289,14 @@ export default function ProjectPage({ game, prevGame, nextGame }: ProjectPagePro
                             borderWidth="1px"
                             borderColor="gray.800"
                             bg="black"
-                            maxH="450px"
+                            maxH={isGif ? undefined : "450px"}
                           >
                             <Image
                               src={section.image}
                               alt={section.title}
                               width="100%"
-                              maxH="450px"
-                              objectFit="cover"
+                              maxH={isGif ? undefined : "450px"}
+                              objectFit={isGif ? "contain" : "cover"}
                             />
                           </Box>
                           {section.imageCaption && (
@@ -300,7 +307,8 @@ export default function ProjectPage({ game, prevGame, nextGame }: ProjectPagePro
                               textAlign="center"
                               fontStyle="italic"
                             >
-                              📷 {section.imageCaption}
+                              {isGif ? "▶ " : "📷 "}
+                              {section.imageCaption}
                             </Text>
                           )}
                         </Box>
@@ -417,7 +425,8 @@ export default function ProjectPage({ game, prevGame, nextGame }: ProjectPagePro
                         </Box>
                       )}
                     </Box>
-                  ))
+                    );
+                  })
                 ) : null}
               </VStack>
             </Box>

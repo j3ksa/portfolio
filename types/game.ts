@@ -25,6 +25,7 @@ export interface GameProject {
   year: string;
   description: string;
   primaryFocus: string;
+  teamSize: number;
   myContribution: string[];
   tools: string[];
   itchUrl: string;

@@ -11,6 +11,7 @@ export const games: GameProject[] = [
     platform: "Windows (PC) · itch.io",
     year: "2024",
     primaryFocus: "Complete UI/UX System & Dynamic Potion Statistics Engine",
+    teamSize: 3,
     description:
       "Pharmacy is an atmospheric survival RPG set in a decaying post-apocalyptic world. The player steps into the shoes of a lone survivor desperately searching for ingredients to formulate a cure for a fatal pandemic that has decimated humanity. The experience hinges on resource scrounging, high-stakes medical crafting, and managing escalating infection levels under persistent psychological tension.",
     myContribution: [
@@ -141,6 +142,7 @@ public PotionStats CalculateBrew(List<IngredientData> ingredients)
     platform: "PC (Windows / WebGL) · itch.io",
     year: "2024",
     primaryFocus: "Weighted Loot Drop System & ScriptableObject Inventory Architecture",
+    teamSize: 4,
     description:
       "Beergeon is an homage to classic 90s dungeon crawlers with a modern twist, combining a 3D procedurally generated maze with pixel-art 2D billboard sprites. Players navigate treacherous multi-level labyrinths, engage in real-time tactical combat, level up character classes, and hunt for randomly generated loot with diverse affixes and rarity tiers.",
     myContribution: [
@@ -156,8 +158,9 @@ public PotionStats CalculateBrew(List<IngredientData> ingredients)
     coverImage: "/projects/games/beergeon-cover.png",
     screenshots: [
       "/projects/games/beergeon-cover.png",
-      "/projects/games/beergeon-1.png",
-      "/projects/games/beergeon-2.png",
+      "/projects/games/beergeon_0-13s.gif",
+      "/projects/games/beergeon_13-28s.gif",
+      "/projects/games/beergeon_28s-end.gif",
     ],
     highlights: [
       "Weighted probability loot tables with procedural rarity tiers and prefix/suffix stat affixes",
@@ -173,7 +176,7 @@ public PotionStats CalculateBrew(List<IngredientData> ingredients)
           "Beergeon was born out of a deep reverence for old-school dungeon crawlers like Eye of the Beholder and Daggerfall, blended with the addictive pacing of modern roguelites. The visual presentation pairs billboard 2D sprites (always facing the camera) with 3D dungeon architecture, evoking timeless retro charm.",
           "Procedural corridors, dim torchlight, and hidden alcoves ensure that no two dungeon excursions feel identical, demanding that players manage their supplies, ammunition, and gear carefully.",
         ],
-        image: "/projects/games/beergeon-cover.png",
+        image: "/projects/games/beergeon_0-13s.gif",
         imageCaption:
           "Beergeon visual concept – 2D billboard sprites navigating dark 3D dungeon corridors.",
         keyTakeaways: [
@@ -215,9 +218,9 @@ public ItemRarity EvaluateRarity(float dungeonFloorModifier, float playerLuck)
           "Equipment slots (Main Hand, Off Hand, Armor, Relic) immediately subscribe to character stat events. Equipping a legendary blade instantly recalculates the player's attack power, critical strike chance, and swing speed, with UI stat cards updating reactively in real time.",
           "The inventory supports intuitive grid organization, item stacking for consumables, quick-slot binding, and full tooltip previews displaying comparative stat differentials (green for upgrade, red for downgrade).",
         ],
-        image: "/projects/games/beergeon-1.png",
+        image: "/projects/games/beergeon_13-28s.gif",
         imageCaption:
-          "Inventory & equipment interface – Slot-based gear system with dynamic stat bonuses. (Add your custom screenshot at public/projects/games/beergeon-1.png)",
+          "Inventory & equipment interface – Slot-based gear system with dynamic stat bonuses.",
         keyTakeaways: [
           "Zero hard-coded item parameters: 100% data-driven architecture using ScriptableObjects.",
           "Reactive event-based stat recalculation preventing synchronization bugs between inventory and combat.",
@@ -231,9 +234,9 @@ public ItemRarity EvaluateRarity(float dungeonFloorModifier, float playerLuck)
           "In addition to loot and gear, I developed the procedural generation algorithm that carves out rooms, connecting corridors, and secret doorways. The algorithm places spawn markers for enemies, treasure chests, and the exit ladder based on distance from the player's initial entry point.",
           "Combat mechanics feature raycast-based melee weapon swings with dynamic camera recoil, damage numbers, and impact sound feedback, creating punchy, tactile dungeon encounters.",
         ],
-        image: "/projects/games/beergeon-2.png",
+        image: "/projects/games/beergeon_28s-end.gif",
         imageCaption:
-          "Dungeon procedural exploration in action. (Add your custom screenshot at public/projects/games/beergeon-2.png)",
+          "Dungeon procedural exploration in action.",
         keyTakeaways: [
           "Guaranteed pathfinding reachability from spawn to exit on every generated floor.",
           "Clean modular prefabs enabling endless visual variation across dungeon biomes.",
@@ -251,6 +254,7 @@ public ItemRarity EvaluateRarity(float dungeonFloorModifier, float playerLuck)
     platform: "PC (Windows Standalone) · itch.io",
     year: "2025",
     primaryFocus: "Synchronized Matchmaking & Pre-Match Lobby Architecture (Unity 6 NGO)",
+    teamSize: 4,
     description:
       "A fast-paced multiplayer hybrid combining tower defense wave survival with first-person shooter combat, built in the cutting-edge Unity 6 engine. Players team up to hold high-ground watchtowers against relentless enemy onslaughts in cooperative PvE, or face off against each other in asymmetrical PvP attack-and-defend battles.",
     myContribution: [
@@ -272,9 +276,9 @@ public ItemRarity EvaluateRarity(float dungeonFloorModifier, float playerLuck)
     githubUrl: "https://github.com/j3ksa/multiplayer-game",
     coverImage: "/projects/games/multiplayer-cover.png",
     screenshots: [
+      "/projects/games/multi.gif",
       "/projects/games/multiplayer-cover.png",
       "/projects/games/multiplayer-1.png",
-      "/projects/games/multiplayer-2.png",
     ],
     highlights: [
       "Synchronized Pre-Match Lobby with real-time ready checks and host-authoritative launch",
@@ -337,8 +341,6 @@ public void SetPlayerReadyRpc(ulong clientId, bool isReady)
           "2. Local UDP Broadcast Discovery: For players on the same network (LAN / university lab / dorm), I implemented `LANDiscoveryManager.cs`. It broadcasts small UDP packets across the subnet, allowing clients to open the server browser and immediately see all available local matches with one click.",
         ],
         image: "/projects/games/multiplayer-1.png",
-        imageCaption:
-          "Pre-match Lobby & Server Browser in Unity 6. (Add your custom screenshot at public/projects/games/multiplayer-1.png)",
         keyTakeaways: [
           "Zero-friction cross-network play: Join codes eliminate port forwarding hurdles.",
           "Automatic LAN discovery delivers instant plug-and-play local multiplayer.",
@@ -351,9 +353,7 @@ public void SetPlayerReadyRpc(ulong clientId, bool isReady)
         content: [
           "The session manager maintains strict authority over critical game milestones: round countdowns, wave trigger events, and victory conditions. By keeping game logic authoritative on the server/host and predicting player actions locally, gameplay remains responsive even under fluctuating ping times.",
         ],
-        image: "/projects/games/multiplayer-2.png",
-        imageCaption:
-          "Multiplayer defense gameplay testing. (Add your custom screenshot at public/projects/games/multiplayer-2.png)",
+        image: "/projects/games/multi.gif",
         keyTakeaways: [
           "Server-authoritative game loops preventing cheating and state divergence.",
           "Modular architecture separating network transport from gameplay scripting.",
