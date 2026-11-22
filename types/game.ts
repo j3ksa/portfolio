@@ -1,3 +1,19 @@
+export interface DevlogSection {
+  title: string;
+  subtitle?: string;
+  content: string[];
+  image?: string;
+  imageCaption?: string;
+  isVideoPlaceholder?: boolean;
+  videoPlaceholderDetails?: {
+    title: string;
+    description: string;
+    note?: string;
+  };
+  keyTakeaways?: string[];
+  codeSnippet?: string;
+}
+
 export interface GameProject {
   id: string;
   slug: string;
@@ -8,6 +24,7 @@ export interface GameProject {
   platform: string;
   year: string;
   description: string;
+  primaryFocus: string;
   myContribution: string[];
   tools: string[];
   itchUrl: string;
@@ -15,4 +32,5 @@ export interface GameProject {
   coverImage: string;
   screenshots: string[];
   highlights: string[];
+  devlog: DevlogSection[];
 }

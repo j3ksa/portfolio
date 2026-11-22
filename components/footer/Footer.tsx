@@ -6,7 +6,6 @@ import {
   Text,
   VStack,
   Divider,
-  Box,
 } from "@chakra-ui/react";
 import { contacts } from "info/contact";
 import { FaRegCopyright } from "react-icons/fa";
